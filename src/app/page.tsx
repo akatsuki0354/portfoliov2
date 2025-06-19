@@ -16,6 +16,7 @@ import { DATA } from '../app/page-data'
 import { Sun, MoonIcon } from "lucide-react";
 import Home from "./Components/Home/Home";
 import { Nunito } from "next/font/google";
+import About from "./Components/About/About";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -110,6 +111,9 @@ export default function Page() {
       </div>
       <section id="Home">
         <Home />
+      </section>
+      <section id="About">
+        <About />
       </section>
     </div>
   );
