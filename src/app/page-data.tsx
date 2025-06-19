@@ -1,4 +1,4 @@
-import { HomeIcon, MailIcon, Rocket, Contact2 } from "lucide-react";
+import { HomeIcon, MailIcon, Rocket, Contact2, User } from "lucide-react";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 export const Icons = {
   email: (props: IconProps) => <MailIcon {...props} />,
@@ -23,20 +23,21 @@ export const Icons = {
 
 export const DATA = {
   navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: Rocket, label: "About" },
-    { href: "#", icon: Contact2, label: "Contact" },
+    { href: "#Home", icon: HomeIcon, label: "Home" },
+    { href: "#About", icon: User, label: "About" },
+    { href: "#Project", icon: Rocket, label: "Project" },
+    { href: "#Contact", icon: Contact2, label: "Contact" },
   ],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "#",
+        url: "https://github.com/akatsuki0354/",
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: "https://www.linkedin.com/in/franco-gregorio-1ba17a277/",
         icon: Icons.linkedin,
       },
     },

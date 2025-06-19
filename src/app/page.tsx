@@ -1,5 +1,4 @@
 "use client"
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { buttonVariants } from "@/components/ui/button";
@@ -15,11 +14,14 @@ import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { DATA } from '../app/page-data'
 import { Sun, MoonIcon } from "lucide-react";
-
-export default function Home() {
+import Home from "./Components/Home/Home";
+import { Nunito } from "next/font/google";
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400']
+})
+export default function Page() {
   const [mode, setMode] = useState(localStorage.getItem('mode') || 'light');
-
-
   useEffect(() => {
     localStorage.setItem('mode', mode);
     if (mode === 'dark') {
@@ -33,19 +35,12 @@ export default function Home() {
     setMode(mode === 'light' ? 'dark' : 'light');
   };
 
-  useEffect(() => {
-    if (mode === 'dark') {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-  }, []);
 
 
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center">
-        <div className="absolute bottom-0 pb-10">
+    <div className={nunito.className}>
+      <div className="fixed  bottom-0 w-full flex flex-col items-center justify-center z-50">
+        <div className="pb-10">
           <TooltipProvider>
             <Dock iconDistance={0}>
               {DATA.navbar.map((item) => (
@@ -111,7 +106,11 @@ export default function Home() {
             </Dock>
           </TooltipProvider>
         </div>
+
       </div>
+      <section id="Home">
+        <Home />
+      </section>
     </div>
   );
 }
