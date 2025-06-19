@@ -46,9 +46,9 @@ function Home() {
                             currently focused on web development. I am a second-year college
                             student at ICI.
                             <div className="mt-4 inline-talents flex gap-4">
-                                <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 dark:text-white dark:bg-blue-600 px-2 py-1 text-xs font-semibold text-blue-600"> Web App</span>
-                                <span className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:text-white dark:bg-indigo-600 px-2 py-1 text-xs font-semibold text-indigo-600"> Responsive </span>
-                                <span className="inline-flex items-center gap-1 rounded-full bg-orange-50 dark:text-white dark:bg-orange-600 px-2 py-1 text-xs font-semibold text-orange-600"> UI / UX </span>
+                                <span className="bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200 text-sm px-3 py-1 rounded-full">Web App</span>
+                                <span className="bg-blue-200 text-blue-800 dark:bg-blue-700 dark:text-blue-200 text-sm px-3 py-1 rounded-full">Responsive</span>
+                                <span className="bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-sm px-3 py-1 rounded-full">UI / UX</span>
                             </div>
                         </CardDescription>
                     </div>
