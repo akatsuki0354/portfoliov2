@@ -9,7 +9,7 @@ import { photoData } from "./About-data";
 
 const CarouselExample = () => {
     return (
-        <div className="mt-24 m:mt-0 pb-34 text-center text-xl">
+        <div className="pt-24 m:mt-0 pb-24 text-center text-xl">
             <h1 className="md:text-6xl text-5xl font-semibold text-center mb-6">About</h1>
             <blockquote className="mb-6 border-l-2 italic text-center">
                 &quot;Great developers aren't born—they're made through consistency, curiosity, and code.&quot;
@@ -28,7 +28,7 @@ const CarouselExample = () => {
                             ))}
                         </CarouselMainContainer>
                     </div>
-                    <CarouselThumbsContainer className="h-30 lg:h-60 min-w-0 flex-1 md:basis-1/4 w-full mt-4 md:mt-0">
+                    <CarouselThumbsContainer className="h-30 sm:h-50 lg:h-60 min-w-0 flex-1 md:basis-1/4 w-full mt-4 md:mt-0">
                         {photoData.map((id, idx) => (
                             <SliderThumbItem
                                 key={id.id}
@@ -43,7 +43,7 @@ const CarouselExample = () => {
 
             </div>
             <div className="flex justify-center">
-                <div className=" md:w-2/4">
+                <div className="container">
                     <p className="">
                         I have experience in front-end development using technologies such as SASS, Tailwind, and Bootstrap, along with a strong grasp of fundamental design principles. On the back end, I am proficient with Firebase and Node.js. Since 2021, I have been working with React, JavaScript, and TypeScript.
                     </p>

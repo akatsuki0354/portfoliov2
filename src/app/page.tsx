@@ -39,82 +39,86 @@ export default function Page() {
 
 
   return (
-    <div className={nunito.className}>
-      <div className="fixed  bottom-0 w-full flex flex-col items-center justify-center z-50">
-        <div className="pb-10">
-          <TooltipProvider>
-            <Dock iconDistance={0}>
-              {DATA.navbar.map((item) => (
-                <DockIcon key={item.label}>
+    <div>
+      <div className={`${nunito.className} `}>
+        <div className="fixed  bottom-0 w-full flex flex-col items-center justify-center z-50">
+          <div className="pb-10">
+            <TooltipProvider>
+              <Dock iconDistance={0}>
+                {DATA.navbar.map((item) => (
+                  <DockIcon key={item.label}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Link
+                          href={item.href}
+                          aria-label={item.label}
+                          className={cn(
+                            buttonVariants({ variant: "ghost", size: "icon" }),
+                            "size-12 rounded-full",
+                          )}
+                        >
+                          <item.icon className="size-4" />
+                        </Link>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{item.label}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </DockIcon>
+                ))}
+                <Separator orientation="vertical" className="h-full" />
+                {Object.entries(DATA.contact.social).map(([name, social]) => (
+                  <DockIcon key={name}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Link
+                          href={social.url}
+                          aria-label={social.name}
+                          className={cn(
+                            buttonVariants({ variant: "ghost", size: "icon" }),
+                            "size-12 rounded-full",
+                          )}
+                        >
+                          <social.icon className="size-4" />
+                        </Link>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </DockIcon>
+                ))}
+                <Separator orientation="vertical" className="h-full py-2" />
+                <DockIcon>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Link
-                        href={item.href}
-                        aria-label={item.label}
-                        className={cn(
-                          buttonVariants({ variant: "ghost", size: "icon" }),
-                          "size-12 rounded-full",
+                      <span className='mode'>
+                        {mode === 'light' ? (
+                          <Button variant={'ghost'} onClick={toggleMode}><MoonIcon /></Button>
+                        ) : (
+                          <Button variant={'ghost'} onClick={toggleMode}><Sun /></Button>
                         )}
-                      >
-                        <item.icon className="size-4" />
-                      </Link>
+                      </span>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>{item.label}</p>
+                      <p>Theme</p>
                     </TooltipContent>
                   </Tooltip>
                 </DockIcon>
-              ))}
-              <Separator orientation="vertical" className="h-full" />
-              {Object.entries(DATA.contact.social).map(([name, social]) => (
-                <DockIcon key={name}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Link
-                        href={social.url}
-                        aria-label={social.name}
-                        className={cn(
-                          buttonVariants({ variant: "ghost", size: "icon" }),
-                          "size-12 rounded-full",
-                        )}
-                      >
-                        <social.icon className="size-4" />
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{name}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </DockIcon>
-              ))}
-              <Separator orientation="vertical" className="h-full py-2" />
-              <DockIcon>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <span className='mode'>
-                      {mode === 'light' ? (
-                        <Button variant={'ghost'} onClick={toggleMode}><MoonIcon /></Button>
-                      ) : (
-                        <Button variant={'ghost'} onClick={toggleMode}><Sun /></Button>
-                      )}
-                    </span>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Theme</p>
-                  </TooltipContent>
-                </Tooltip>
-              </DockIcon>
-            </Dock>
-          </TooltipProvider>
-        </div>
+              </Dock>
+            </TooltipProvider>
+          </div>
 
+        </div>
+        <section id="Home">
+          <Home />
+        </section>
+        <hr />
+        <section id="About">
+          <About />
+        </section>
+        <hr />
       </div>
-      <section id="Home">
-        <Home />
-      </section>
-      <section id="About">
-        <About />
-      </section>
     </div>
   );
 }

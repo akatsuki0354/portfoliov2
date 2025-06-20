@@ -29,7 +29,7 @@ function Home() {
     }, [charIndex, index]);
 
     return (
-        <div className=" flex justify-center place-items-center w-full">
+        <div className="pb-24 lg:pb-0 flex justify-center place-items-center w-full">
             <div className="container home">
                 <div className="flex justify-between items-center   profile_and_text" >
                     <div className="text_profile md:basis-[63%]">
@@ -64,3 +64,4 @@ function Home() {
 }
 
 export default Home;
+
