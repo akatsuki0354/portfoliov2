@@ -1,8 +1,10 @@
 import React from 'react'
-
+import FooterLayouts from './footer-layouts'
 function Footer() {
     return (
-        <div>Footer</div>
+        <div>
+            <FooterLayouts />
+        </div>
     )
 }
 

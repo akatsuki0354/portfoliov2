@@ -19,6 +19,7 @@ import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
 import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
+import Footer from "./Components/Footer/Footer";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -128,6 +129,7 @@ export default function Page() {
           <Contact />
         </section>
         <hr />
+        <Footer />
       </div>
     </div>
   );

@@ -6,14 +6,21 @@ import {
     SliderThumbItem,
 } from "@/components/ui/extension/carousel";
 import { photoData } from "./About-data";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const CarouselExample = () => {
     return (
         <div className="pt-24 m:mt-0 pb-24 text-center text-xl">
             <h1 className="md:text-6xl text-5xl font-semibold text-center mb-6">About</h1>
+
             <blockquote className="mb-6 text-muted-foreground text-xl border-l-2 italic text-center">
-                &quot;Great developers aren't born—they're made through consistency, curiosity, and code.&quot;
+                <TextAnimate animation="blurIn" as="h1" duration={1} once>
+                    &quot;Great developers aren't born—they're made through consistency, curiosity, and code.&quot;
+                </TextAnimate>
             </blockquote>
+
+
+
             <div className=" flex flex-col md:flex-row  justify-center place-items-center w-full max-w-4xl mx-auto px-2 gap-4 overflow-x-auto">
                 <Carousel orientation="horizontal">
                     <div className="relative min-w-0  flex-1 md:basis-3/4 w-full">
