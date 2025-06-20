@@ -13,7 +13,7 @@ function Project() {
                 visually appealing digital experiences.
             </p>
             <div>
-                <div className='flex justify-center gap-10 flex-wrap'>
+                <div className='flex justify-center p-2 gap-10 flex-wrap'>
                     {ProjectData.map((id) => (
                         <Projectlayouts
                             key={id}
