@@ -11,7 +11,7 @@ const CarouselExample = () => {
     return (
         <div className="pt-24 m:mt-0 pb-24 text-center text-xl">
             <h1 className="md:text-6xl text-5xl font-semibold text-center mb-6">About</h1>
-            <blockquote className="mb-6 border-l-2 italic text-center">
+            <blockquote className="mb-6 text-muted-foreground text-xl border-l-2 italic text-center">
                 &quot;Great developers aren't born—they're made through consistency, curiosity, and code.&quot;
             </blockquote>
             <div className=" flex flex-col md:flex-row  justify-center place-items-center w-full max-w-4xl mx-auto px-2 gap-4 overflow-x-auto">
@@ -43,11 +43,10 @@ const CarouselExample = () => {
 
             </div>
             <div className="flex justify-center">
-                <div className="container">
-                    <p className="">
+                <div className="">
+                    <p className="max-w-5xl text-muted-foreground text-xl">
                         I have experience in front-end development using technologies such as SASS, Tailwind, and Bootstrap, along with a strong grasp of fundamental design principles. On the back end, I am proficient with Firebase and Node.js. Since 2021, I have been working with React, JavaScript, and TypeScript.
                     </p>
-
                     <div className="flex justify-center flex-wrap gap-2 mt-4">
                         <span className="bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200 text-sm px-3 py-1 rounded-full">SASS</span>
                         <span className="bg-blue-200 text-blue-800 dark:bg-blue-700 dark:text-blue-200 text-sm px-3 py-1 rounded-full">Tailwind</span>

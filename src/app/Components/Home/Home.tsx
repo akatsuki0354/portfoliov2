@@ -40,11 +40,8 @@ function Home() {
                             {text}
                             <span className="animate-blink"></span>
                         </h1>
-                        <CardDescription className="text-xl ">
-                            Based in Bulacan, I am eager to learn and always willing to improve
-                            my skills. My hobby is playing chess and Mobile Legends, but I am
-                            currently focused on web development. I am a second-year college
-                            student at ICI.
+                        <CardDescription className="text-xl lg:text-justify ">
+                            Based in Bulacan, I am eager to learn and always willing to improve my skills. My hobbies include playing chess and Mobile Legends, but my current focus is on web development. I am a second-year college student at ICI, passionate about building and exploring digital solutions.
                             <div className="mt-4 inline-talents flex gap-4">
                                 <span className="bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200 text-sm px-3 py-1 rounded-full">Web App</span>
                                 <span className="bg-blue-200 text-blue-800 dark:bg-blue-700 dark:text-blue-200 text-sm px-3 py-1 rounded-full">Responsive</span>

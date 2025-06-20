@@ -14,9 +14,11 @@ import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { DATA } from '../app/page-data'
 import { Sun, MoonIcon } from "lucide-react";
-import Home from "./Components/Home/Home";
 import { Nunito } from "next/font/google";
+import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
+import Project from "./Components/Project/Project";
+import Contact from "./Components/Contact/Contact";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -40,7 +42,7 @@ export default function Page() {
 
   return (
     <div>
-      <div className={`${nunito.className} `}>
+      <div className={`${nunito.className} dark:bg-muted`}>
         <div className="fixed  bottom-0 w-full flex flex-col items-center justify-center z-50">
           <div className="pb-10">
             <TooltipProvider>
@@ -116,6 +118,14 @@ export default function Page() {
         <hr />
         <section id="About">
           <About />
+        </section>
+        <hr />
+        <section id="Project">
+          <Project />
+        </section>
+        <hr />
+        <section id="Contact">
+          <Contact />
         </section>
         <hr />
       </div>
