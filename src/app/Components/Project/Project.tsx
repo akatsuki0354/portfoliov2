@@ -1,6 +1,7 @@
 import React from 'react'
 import { ProjectData } from './project-data'
 import Projectlayouts from './project-layouts'
+
 function Project() {
     return (
         <div className='pt-24 pb-24'>
@@ -16,7 +17,8 @@ function Project() {
                 <div className='flex justify-center p-2 gap-10 flex-wrap'>
                     {ProjectData.map((id) => (
                         <Projectlayouts
-                            key={id}
+                            key={id.id}
+                            photoAlt={id.description}
                             photoURl={id.projectURL.src}
                             title={id.title}
                             description={id.description}
@@ -31,3 +33,4 @@ function Project() {
 }
 
 export default Project
+

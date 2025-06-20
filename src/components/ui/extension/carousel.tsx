@@ -216,7 +216,7 @@ Carousel.displayName = "Carousel";
 const CarouselMainContainer = forwardRef<
   HTMLDivElement,
   {} & React.HTMLAttributes<HTMLDivElement>
->(({ className, dir, children, ...props }, ref) => {
+>(({ className, children, ...props }, ref) => {
   const { mainRef, orientation, direction } = useCarousel();
 
   return (
@@ -240,7 +240,7 @@ CarouselMainContainer.displayName = "CarouselMainContainer";
 const CarouselThumbsContainer = forwardRef<
   HTMLDivElement,
   {} & React.HTMLAttributes<HTMLDivElement>
->(({ className, dir, children, ...props }, ref) => {
+>(({ className, children, ...props }, ref) => {
   const { thumbsRef, orientation, direction } = useCarousel();
 
   return (
@@ -264,20 +264,18 @@ CarouselThumbsContainer.displayName = "CarouselThumbsContainer";
 const SliderMainItem = forwardRef<
   HTMLDivElement,
   {} & React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => {
+>(({ className, ...props }, ref) => {
   const { orientation } = useCarousel();
   return (
     <div
       {...props}
       ref={ref}
       className={cn(
-        `min-w-0 shrink-0 grow-0 basis-full bg-background p-1 ${
-          orientation === "vertical" ? "pb-1" : "pr-1"
-        }`,
+        `min-w-0 shrink-0 grow-0 basis-full bg-background p-1 ${orientation === "vertical" ? "pb-1" : "pr-1"}`,
         className,
       )}
     >
-      {children}
+      {props.children}
     </div>
   );
 });
@@ -289,7 +287,7 @@ const SliderThumbItem = forwardRef<
   {
     index: number;
   } & React.HTMLAttributes<HTMLDivElement>
->(({ className, index, children, ...props }, ref) => {
+>(({ className, index, ...props }, ref) => {
   const { activeIndex, onThumbClick, orientation } = useCarousel();
   const isSlideActive = activeIndex === index;
   return (
@@ -304,11 +302,9 @@ const SliderThumbItem = forwardRef<
       )}
     >
       <div
-        className={`relative aspect-square h-20 w-full opacity-50 rounded-md transition-opacity ${
-          isSlideActive ? "!opacity-100" : ""
-        }`}
+        className={`relative aspect-square h-20 w-full opacity-50 rounded-md transition-opacity ${isSlideActive ? "!opacity-100" : ""}`}
       >
-        {children}
+        {props.children}
       </div>
     </div>
   );
@@ -319,7 +315,7 @@ SliderThumbItem.displayName = "SliderThumbItem";
 const CarouselIndicator = forwardRef<
   HTMLButtonElement,
   { index: number } & React.ComponentProps<typeof Button>
->(({ className, index, children, ...props }, ref) => {
+>(({ className, index, ...props }, ref) => {
   const { activeIndex, onThumbClick } = useCarousel();
   const isSlideActive = activeIndex === index;
   return (
@@ -345,7 +341,7 @@ CarouselIndicator.displayName = "CarouselIndicator";
 const CarouselPrevious = forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
->(({ className, dir, variant = "outline", size = "icon", ...props }, ref) => {
+>(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const {
     canScrollNext,
     canScrollPrev,
@@ -383,7 +379,7 @@ CarouselPrevious.displayName = "CarouselPrevious";
 const CarouselNext = forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
->(({ className, dir, variant = "outline", size = "icon", ...props }, ref) => {
+>(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const {
     canScrollNext,
     canScrollPrev,

@@ -2,7 +2,7 @@ import { CardDescription } from "@/components/ui/card";
 import Profile from "@/app/assets/img/transparent-profile1.png";
 import { useState, useEffect } from "react";
 import '../Home/Home.style.css'
-import { TextEffect } from "@/components/ui/text-effect";
+import Image from 'next/image'
 const dataText = [
     "FrontEnd Web Developer",
     "BackEnd Web Developer",
@@ -35,7 +35,7 @@ function Home() {
                 <div className="flex justify-between items-center   profile_and_text" >
                     <div className="text_profile md:basis-[63%]">
                         <h1 className="h1_Name">
-                            <span className="text-muted-foreground ">Hello!</span> I'm Franco
+                            <span className="text-muted-foreground ">Hello!</span> I&#39;m Franco
                         </h1>
                         <h1 className="title text-emerald-600 font-semibold -mt-2">
                             {text}
@@ -52,7 +52,7 @@ function Home() {
                     </div>
                     <div className="img ">
                         <div className="img-child">
-                            <img src={Profile.src} alt="franco-gregorio" />
+                            <Image src={Profile} alt="franco-gregorio" />
                         </div>
                     </div>
                 </div>

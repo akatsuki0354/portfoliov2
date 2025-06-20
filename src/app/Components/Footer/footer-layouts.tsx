@@ -1,7 +1,6 @@
-
 import { Button } from "@/components/ui/button"
 
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { Facebook, Instagram, Twitter } from "lucide-react"
 
 export default function FooterLayouts() {
     return (

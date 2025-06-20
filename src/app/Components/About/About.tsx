@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/extension/carousel";
 import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import Image from "next/image";
 
 const CarouselExample = () => {
     return (
@@ -15,7 +16,7 @@ const CarouselExample = () => {
 
             <blockquote className="mb-6 text-muted-foreground text-xl border-l-2 italic text-center">
                 <TextAnimate animation="blurIn" as="h1" duration={1} once>
-                    &quot;Great developers aren't born—they're made through consistency, curiosity, and code.&quot;
+                    &quot;Great developers aren&#39;t born—they&#39;re made through consistency, curiosity, and code.&quot;
                 </TextAnimate>
             </blockquote>
 
@@ -30,7 +31,7 @@ const CarouselExample = () => {
                                     key={id.id}
                                     className="border border-muted flex overflow-hidden items-center justify-center md:h-84 rounded-md"
                                 >
-                                    <img src={id.photoURL.src} alt="" />
+                                    <Image src={id.photoURL.src} alt="" width={id.photoURL.width} height={id.photoURL.height} className="object-contain" />
                                 </SliderMainItem>
                             ))}
                         </CarouselMainContainer>
@@ -42,7 +43,7 @@ const CarouselExample = () => {
                                 index={idx}
                                 className="rounded-md bg-transparent cursor-pointer "
                             >
-                                <img src={id.photoURL.src} alt="" />
+                                <Image src={id.photoURL.src} alt="" width={id.photoURL.width} height={id.photoURL.height} className="object-contain" />
                             </SliderThumbItem>
                         ))}
                     </CarouselThumbsContainer>

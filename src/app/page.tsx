@@ -25,7 +25,14 @@ const nunito = Nunito({
   weight: ['400']
 })
 export default function Page() {
-  const [mode, setMode] = useState(localStorage.getItem('mode') || 'light');
+  const [mode, setMode] = useState('light');
+
+  useEffect(() => {
+    // Only runs on client
+    const storedMode = localStorage.getItem('mode');
+    if (storedMode) setMode(storedMode);
+  }, []);
+
   useEffect(() => {
     localStorage.setItem('mode', mode);
     if (mode === 'dark') {

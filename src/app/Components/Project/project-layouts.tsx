@@ -8,11 +8,20 @@ import {
     MorphingDialogDescription,
     MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog';
-import { ArrowUpRight, PlusIcon, Link } from 'lucide-react';
+import { ArrowUpRight, PlusIcon } from 'lucide-react';
 
 import React from 'react'
 
-function Projectlayouts(props: any) {
+interface ProjectLayoutsProps {
+    photoURl: string;
+    photoAlt: string;
+    title: string;
+    link: string;
+    description: string;
+    icon: string[];
+}
+
+function Projectlayouts(props: ProjectLayoutsProps) {
     return (
         <MorphingDialog
             transition={{
