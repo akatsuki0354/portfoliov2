@@ -2,6 +2,7 @@ import { CardDescription } from "@/components/ui/card";
 import Profile from "@/app/assets/img/transparent-profile1.png";
 import { useState, useEffect } from "react";
 import '../Home/Home.style.css'
+import { TextEffect } from "@/components/ui/text-effect";
 const dataText = [
     "FrontEnd Web Developer",
     "BackEnd Web Developer",

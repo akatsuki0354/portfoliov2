@@ -52,7 +52,7 @@ export function ContactLayouts({
                             </Button>
                         </div>
                     </form>
-                    <div className="relative hidden bg-muted md:block">
+                    <div className="relative hidden rounded-l-2xl bg-muted md:block">
 
                     </div>
                 </CardContent>
