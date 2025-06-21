@@ -23,12 +23,14 @@ import Footer from "./Components/Footer/Footer";
 import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
+
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
 })
 export default function Page() {
   const [mode, setMode] = useState('light');
+  const [activeSection, setActiveSection] = useState('Home');
 
   useEffect(() => {
     const storedMode = localStorage.getItem('mode');
@@ -43,6 +45,34 @@ export default function Page() {
       document.body.classList.remove('dark');
     }
   }, [mode]);
+
+  useEffect(() => {
+    const sections = ['Home', 'About', 'Project', 'Contact'];
+    const observers: IntersectionObserver[] = [];
+
+    sections.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setActiveSection(sectionId);
+            }
+          },
+          {
+            threshold: 0.3,
+            rootMargin: '-20% 0px -20% 0px'
+          }
+        );
+        observer.observe(section);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
+  }, []);
 
   const toggleMode = () => {
     setMode(mode === 'light' ? 'dark' : 'light');
@@ -89,10 +119,14 @@ export default function Page() {
                           aria-label={item.label}
                           className={cn(
                             buttonVariants({ variant: "ghost", size: "icon" }),
-                            "size-12 rounded-full",
+                            "size-12 rounded-full relative",
+                            activeSection === item.label && "bg-primary/20 ring-2 ring-primary/50"
                           )}
                         >
                           <item.icon className="size-4" />
+                          {activeSection === item.label && (
+                            <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse" />
+                          )}
                         </Link>
                       </TooltipTrigger>
                       <TooltipContent>

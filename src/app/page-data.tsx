@@ -51,3 +51,4 @@ export const MouseIcon = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
+
