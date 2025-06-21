@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 
-import { Facebook, Instagram, Twitter } from "lucide-react"
+import { Facebook, Instagram, MailIcon } from "lucide-react"
 
 export default function FooterLayouts() {
     return (
@@ -15,9 +15,9 @@ export default function FooterLayouts() {
                             </a>
                         </Button>
                         <Button variant="outline" size="icon" className="rounded-full">
-                            <a href="#">
-                                <Twitter className="h-4 w-4" />
-                                <span className="sr-only">Twitter</span>
+                            <a href="mailto:francogregorio2004@gmail.com">
+                                <MailIcon className="h-4 w-4" />
+                                <span className="sr-only">Email</span>
                             </a>
                         </Button>
                         <Button variant="outline" size="icon" className="rounded-full">

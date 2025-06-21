@@ -20,8 +20,6 @@ const CarouselExample = () => {
                 </TextAnimate>
             </blockquote>
 
-
-
             <div className=" flex flex-col md:flex-row  justify-center place-items-center w-full max-w-4xl mx-auto px-2 gap-4 overflow-x-auto">
                 <Carousel orientation="horizontal">
                     <div className="relative min-w-0  flex-1 md:basis-3/4 w-full">

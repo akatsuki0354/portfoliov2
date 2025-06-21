@@ -23,8 +23,8 @@ import Footer from "./Components/Footer/Footer";
 import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
-import { Particles } from "@/components/magicui/particles";
-import { useTheme } from "next-themes";
+// import { Particles } from "@/components/magicui/particles";
+// import { useTheme } from "next-themes";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -34,12 +34,12 @@ export default function Page() {
   const [activeSection, setActiveSection] = useState('Home');
   const [isOverInput, setIsOverInput] = useState(false);
 
-  const { resolvedTheme } = useTheme();
-  const [color, setColor] = useState("#ffffff");
+  // const { resolvedTheme } = useTheme();
+  // const [color, setColor] = useState("#ffffff");
 
-  useEffect(() => {
-    setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
-  }, [resolvedTheme]);
+  // useEffect(() => {
+  //   setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
+  // }, [resolvedTheme]);
 
   // Handle cursor visibility over input elements
   useEffect(() => {
@@ -114,13 +114,13 @@ export default function Page() {
 
   return (
     <div >
-      <Particles
+      {/* <Particles
         className="absolute inset-0 z-0"
         quantity={2500}
         ease={90}
         color={color}
         refresh
-      />
+      /> */}
       <Spotlight
         className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
         size={64}
