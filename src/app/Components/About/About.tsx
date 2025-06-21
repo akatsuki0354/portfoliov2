@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/extension/carousel";
 import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { TextEffect } from "@/components/ui/text-effect";
 import Image from "next/image";
 
 const CarouselExample = () => {
@@ -52,8 +53,10 @@ const CarouselExample = () => {
             </div>
             <div className="flex justify-center">
                 <div className="">
-                    <p className="max-w-5xl text-muted-foreground text-xl">
-                        I have experience in front-end development using technologies such as SASS, Tailwind, and Bootstrap, along with a strong grasp of fundamental design principles. On the back end, I am proficient with Firebase and Node.js. Since 2021, I have been working with React, JavaScript, and TypeScript.
+                    <p className="max-w-7xl text-muted-foreground text-xl">
+                        <TextAnimate animation="blurIn" duration={1} as="h1">
+                            I'm a creative problem-solver and passionate web developer who loves turning ideas into interactive, user-focused experiences. I believe great design meets great function, and I aim to build websites that not only look good—but feel right to use. Alongside crafting seamless interfaces, I also enjoy building reliable and scalable back-end systems that keep everything running smoothly behind the scenes.
+                        </TextAnimate>
                     </p>
                     <div className="flex justify-center flex-wrap gap-2 mt-4">
                         <span className="bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200 text-sm px-3 py-1 rounded-full">SASS</span>

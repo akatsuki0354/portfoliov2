@@ -1,31 +1,36 @@
 import React from 'react'
 import { ProjectData } from './project-data'
 import Projectlayouts from './project-layouts'
-
+import { TextAnimate } from '@/components/magicui/text-animate'
+import { Tilt } from '../../../../components/motion-primitives/tilt'
 function Project() {
     return (
         <div className='pt-24 pb-24'>
             <h1 className="md:text-6xl text-5xl font-semibold text-center mb-5">Project</h1>
             <p className="text-center text-muted-foreground text-xl  max-w-5xl mx-auto mb-10">
-                Explore a collection of my featured projects showcasing skills in design, development, and
-                problem-solving.
-                Each project reflects my passion for creating
-                functional and
-                visually appealing digital experiences.
+                <TextAnimate animation="blurIn" duration={1} as="h1">
+                    Explore a collection of my featured projects showcasing skills in design, development, and
+                    problem-solving.
+                    Each project reflects my passion for creating
+                    functional and
+                    visually appealing digital experiences.
+                </TextAnimate>
             </p>
             <div>
                 <div className='flex justify-center p-2 gap-10 flex-wrap'>
                     {ProjectData.map((id) => (
-                        <Projectlayouts
-                            key={id.id}
-                            photoAlt={id.description}
-                            photoURl={id.projectURL.src}
-                            title={id.title}
-                            description={id.description}
-                            link={id.link}
-                            icon={id.icon}
-                            github={id.github}
-                        />
+                        <Tilt rotationFactor={8} isRevese>
+                            <Projectlayouts
+                                key={id.id}
+                                photoAlt={id.description}
+                                photoURl={id.projectURL.src}
+                                title={id.title}
+                                description={id.description}
+                                link={id.link}
+                                icon={id.icon}
+                                github={id.github}
+                            />
+                        </Tilt>
                     ))}
                 </div>
             </div>

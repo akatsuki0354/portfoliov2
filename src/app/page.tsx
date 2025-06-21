@@ -20,6 +20,7 @@ import About from "./Components/About/About";
 import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
+import { Spotlight } from "../../components/motion-primitives/spotlight";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -50,6 +51,14 @@ export default function Page() {
 
   return (
     <div>
+      <Spotlight
+        className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
+        size={64}
+        springOptions={{
+          bounce: 0.3,
+          duration: 0.1,
+        }}
+      />
       <div className={`${nunito.className} dark:bg-muted`}>
         <div className="fixed  bottom-0 w-full flex flex-col items-center justify-center z-50">
           <div className="pb-10">
