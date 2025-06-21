@@ -16,7 +16,7 @@ export function ContactLayouts({
                     <form className="p-6 md:p-8">
                         <div className="flex flex-col gap-6">
                             <div className="flex flex-col items-center text-center">
-                                <h1 className="text-2xl font-bold">Contact Us</h1>
+                                <h1 className="text-2xl font-bold">Contact Me</h1>
                                 <p className="text-balance text-muted-foreground">
                                     Have a question? Fill out the form below.
                                 </p>
