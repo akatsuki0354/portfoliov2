@@ -24,6 +24,7 @@ function Project() {
                             description={id.description}
                             link={id.link}
                             icon={id.icon}
+                            github={id.github}
                         />
                     ))}
                 </div>

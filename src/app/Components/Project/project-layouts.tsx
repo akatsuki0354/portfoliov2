@@ -8,18 +8,9 @@ import {
     MorphingDialogDescription,
     MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog';
-import { ArrowUpRight, PlusIcon } from 'lucide-react';
-
+import { ArrowUpRight, GithubIcon } from 'lucide-react';
+import { ProjectLayoutsProps } from './project-data';
 import React from 'react'
-
-interface ProjectLayoutsProps {
-    photoURl: string;
-    photoAlt: string;
-    title: string;
-    link: string;
-    description: string;
-    icon: string[];
-}
 
 function Projectlayouts(props: ProjectLayoutsProps) {
     return (
@@ -49,13 +40,9 @@ function Projectlayouts(props: ProjectLayoutsProps) {
 
                     </div>
 
-                    <button
-                        type='button'
-                        className='relative cursor-pointer ml-1 flex h-6 w-6 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:bg-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-500'
-                        aria-label='Open dialog'
-                    >
-                        <PlusIcon size={12} />
-                    </button>
+                    <a href={props.github} className='hover:bg-slate-500/10 p-1 border-1 border-slate-500/20  rounded-full'>
+                        <GithubIcon size={20} />
+                    </a>
                 </div>
             </MorphingDialogTrigger>
             <MorphingDialogContainer>
@@ -93,7 +80,6 @@ function Projectlayouts(props: ProjectLayoutsProps) {
                                 {Array.isArray(props.icon) && props.icon.map((icon: string, idx: number) => {
                                     const badgeColors = [
                                         'bg-indigo-200 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-200',
-                                        // 'bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200',
                                         'bg-blue-200 text-blue-800 dark:bg-blue-700 dark:text-blue-200',
                                         'bg-purple-200 text-purple-800 dark:bg-purple-700 dark:text-purple-200',
                                         'bg-yellow-200 text-yellow-800 dark:bg-yellow-700 dark:text-yellow-200',
@@ -114,15 +100,6 @@ function Projectlayouts(props: ProjectLayoutsProps) {
                                     );
                                 })}
                             </div>
-                            {/* <a
-                                href=
-                                target='_blank'
-                                rel='noopener noreferrer'
-                            >
-                                <Button variant={'link'}>
-                                    View Live
-                                </Button>
-                            </a> */}
                         </MorphingDialogDescription>
                     </div>
                     <MorphingDialogClose className='text-zinc-50 bg-gray-500/40 rounded-full p-2 cursor-pointer' />
