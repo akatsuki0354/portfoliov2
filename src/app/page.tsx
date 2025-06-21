@@ -225,15 +225,15 @@ export default function Page() {
         <section id="Home">
           <Home />
         </section>
-        <hr />
+
         <section id="About">
           <About />
         </section>
-        <hr />
+
         <section id="Project">
           <Project />
         </section>
-        <hr />
+
         <section id="Contact">
           <Contact />
         </section>
