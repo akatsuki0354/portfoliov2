@@ -21,7 +21,7 @@ import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import { Spotlight } from "../../components/motion-primitives/spotlight";
-import { SVGProps } from 'react';
+import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
 const nunito = Nunito({
   subsets: ['latin'],
@@ -47,39 +47,6 @@ export default function Page() {
   const toggleMode = () => {
     setMode(mode === 'light' ? 'dark' : 'light');
   };
-
-
-  const MouseIcon = (props: SVGProps<SVGSVGElement>) => {
-    return (
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width={26}
-        height={31}
-        fill='none'
-        {...props}
-      >
-        <g clipPath='url(#a)'>
-          <path
-            fill={'#22c55e'}
-            fillRule='evenodd'
-            stroke={'#fff'}
-            strokeLinecap='square'
-            strokeWidth={2}
-            d='M21.993 14.425 2.549 2.935l4.444 23.108 4.653-10.002z'
-            clipRule='evenodd'
-          />
-        </g>
-        <defs>
-          <clipPath id='a'>
-            <path fill={'#22c55e'} d='M0 0h26v31H0z' />
-          </clipPath>
-        </defs>
-      </svg>
-    );
-  };
-
-
-
 
   return (
     <div>
