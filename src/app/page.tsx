@@ -140,7 +140,7 @@ export default function Page() {
           ease: 'easeInOut',
           duration: 0.15,
         }}
-        className='hidden lg:block z-50'
+        className=' z-50'
       >
         {!isOverInput && (
           <div>
