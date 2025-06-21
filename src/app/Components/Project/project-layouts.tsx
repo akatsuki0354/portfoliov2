@@ -12,6 +12,8 @@ import { ArrowUpRight, GithubIcon, ImageUpscale } from 'lucide-react';
 import { ProjectLayoutsProps } from './project-data';
 import { Tilt } from '../../../../components/motion-primitives/tilt';
 import React from 'react'
+import { Cursor } from '../../../../components/motion-primitives/cursor';
+import { MouseIcon } from '../../page-data';
 function Projectlayouts(props: ProjectLayoutsProps) {
     return (
         <MorphingDialog
@@ -51,6 +53,23 @@ function Projectlayouts(props: ProjectLayoutsProps) {
             </MorphingDialogTrigger>
 
             <MorphingDialogContainer>
+                <Cursor
+                    attachToParent
+                    variants={{
+                        initial: { scale: 0.3, opacity: 0 },
+                        animate: { scale: 1, opacity: 1 },
+                        exit: { scale: 0.3, opacity: 0 },
+                    }}
+                    transition={{
+                        ease: 'easeInOut',
+                        duration: 0.15,
+                    }}
+                    className='z-50 hidden lg:block'
+                >
+                    <div>
+                        <MouseIcon className='h-6 w-6' />
+                    </div>
+                </Cursor>
                 <Tilt rotationFactor={8} isRevese>
                     <MorphingDialogContent
                         style={{
