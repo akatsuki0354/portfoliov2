@@ -11,7 +11,7 @@ function Contact() {
                     I&apos;m always open to connecting and exploring new opportunities in design and development.
                 </TextAnimate>
             </p>
-            <div className="flex mt-24 flex-col items-center justify-center ">
+            <div className="flex flex-col items-center justify-center ">
                 <div className="w-full max-w-sm md:max-w-3xl">
                     <ContactLayouts />
                 </div>

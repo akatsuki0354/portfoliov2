@@ -15,7 +15,7 @@ const CarouselExample = () => {
             <h1 className="md:text-6xl text-5xl font-semibold text-center mb-6">About</h1>
 
             <blockquote className="mb-6 text-muted-foreground text-xl border-l-2 italic text-center">
-                <TextAnimate animation="blurIn" as="h1" duration={1} once>
+                <TextAnimate animation="blurIn" as="h1" duration={1}>
                     &quot;Great developers aren&#39;t born—they&#39;re made through consistency, curiosity, and code.&quot;
                 </TextAnimate>
             </blockquote>

@@ -3,6 +3,8 @@ import Profile from "@/app/assets/img/transparent-profile1.png";
 import { useState, useEffect } from "react";
 import '../Home/Home.style.css'
 import Image from 'next/image'
+import { Tilt } from "../../../../components/motion-primitives/tilt";
+
 const dataText = [
     "FrontEnd Web Developer",
     "BackEnd Web Developer",
@@ -50,11 +52,13 @@ function Home() {
                             </div>
                         </CardDescription>
                     </div>
-                    <div className="img ">
-                        <div className="img-child">
-                            <Image src={Profile} alt="franco-gregorio" />
+                    <Tilt rotationFactor={10} isRevese className="img ">
+                        <div >
+                            <div className="img-child">
+                                <Image src={Profile} alt="franco-gregorio" />
+                            </div>
                         </div>
-                    </div>
+                    </Tilt>
                 </div>
             </div>
         </div>

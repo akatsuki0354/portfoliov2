@@ -23,7 +23,8 @@ import Footer from "./Components/Footer/Footer";
 import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
-
+import { Particles } from "@/components/magicui/particles";
+import { useTheme } from "next-themes";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -31,6 +32,14 @@ const nunito = Nunito({
 export default function Page() {
   const [mode, setMode] = useState('light');
   const [activeSection, setActiveSection] = useState('Home');
+
+  const { resolvedTheme } = useTheme();
+  const [color, setColor] = useState("#ffffff");
+
+  useEffect(() => {
+    setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
+  }, [resolvedTheme]);
+
 
   useEffect(() => {
     const storedMode = localStorage.getItem('mode');
@@ -80,6 +89,13 @@ export default function Page() {
 
   return (
     <div>
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={2500}
+        ease={90}
+        color={color}
+        refresh
+      />
       <Spotlight
         className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
         size={64}
@@ -99,7 +115,7 @@ export default function Page() {
           ease: 'easeInOut',
           duration: 0.15,
         }}
-        className='left-12 top-4 z-50 '
+        className='left-12 hidden lg:block top-4 z-50 '
       >
         <div>
           <MouseIcon className='h-6 w-6' />
