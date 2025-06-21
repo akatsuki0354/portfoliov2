@@ -122,12 +122,10 @@ export function Cursor({
   return (
     <motion.div
       ref={cursorRef}
-      className={cn('pointer-events-none fixed left-0 top-0 z-50', className)}
+      className={cn('pointer-events-none fixed left-0 top-0 z-50 flex items-center justify-center', className)}
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
-        translateX: '-50%',
-        translateY: '-50%',
       }}
     >
       <AnimatePresence>
@@ -138,6 +136,7 @@ export function Cursor({
             exit='exit'
             variants={variants}
             transition={transition}
+            className="flex items-center justify-center"
           >
             {children}
           </motion.div>

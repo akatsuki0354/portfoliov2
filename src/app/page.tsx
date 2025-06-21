@@ -32,6 +32,7 @@ const nunito = Nunito({
 export default function Page() {
   const [mode, setMode] = useState('light');
   const [activeSection, setActiveSection] = useState('Home');
+  const [isOverInput, setIsOverInput] = useState(false);
 
   const { resolvedTheme } = useTheme();
   const [color, setColor] = useState("#ffffff");
@@ -40,6 +41,30 @@ export default function Page() {
     setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
   }, [resolvedTheme]);
 
+  // Handle cursor visibility over input elements
+  useEffect(() => {
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.contentEditable === 'true') {
+        setIsOverInput(true);
+      }
+    };
+
+    const handleMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.contentEditable === 'true') {
+        setIsOverInput(false);
+      }
+    };
+
+    document.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseout', handleMouseOut);
+
+    return () => {
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
+    };
+  }, []);
 
   useEffect(() => {
     const storedMode = localStorage.getItem('mode');
@@ -88,7 +113,7 @@ export default function Page() {
   };
 
   return (
-    <div>
+    <div >
       <Particles
         className="absolute inset-0 z-0"
         quantity={2500}
@@ -115,11 +140,13 @@ export default function Page() {
           ease: 'easeInOut',
           duration: 0.15,
         }}
-        className='left-12 hidden lg:block top-4 z-50 '
+        className='hidden lg:block z-50'
       >
-        <div>
-          <MouseIcon className='h-6 w-6' />
-        </div>
+        {!isOverInput && (
+          <div>
+            <MouseIcon className='h-6 w-6' />
+          </div>
+        )}
       </Cursor>
       <div className={`${nunito.className} dark:bg-muted`}>
         <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
