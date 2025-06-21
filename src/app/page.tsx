@@ -21,6 +21,8 @@ import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import { Spotlight } from "../../components/motion-primitives/spotlight";
+import { SVGProps } from 'react';
+import { Cursor } from "../../components/motion-primitives/cursor";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -29,7 +31,6 @@ export default function Page() {
   const [mode, setMode] = useState('light');
 
   useEffect(() => {
-    // Only runs on client
     const storedMode = localStorage.getItem('mode');
     if (storedMode) setMode(storedMode);
   }, []);
@@ -48,6 +49,37 @@ export default function Page() {
   };
 
 
+  const MouseIcon = (props: SVGProps<SVGSVGElement>) => {
+    return (
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width={26}
+        height={31}
+        fill='none'
+        {...props}
+      >
+        <g clipPath='url(#a)'>
+          <path
+            fill={'#22c55e'}
+            fillRule='evenodd'
+            stroke={'#fff'}
+            strokeLinecap='square'
+            strokeWidth={2}
+            d='M21.993 14.425 2.549 2.935l4.444 23.108 4.653-10.002z'
+            clipRule='evenodd'
+          />
+        </g>
+        <defs>
+          <clipPath id='a'>
+            <path fill={'#22c55e'} d='M0 0h26v31H0z' />
+          </clipPath>
+        </defs>
+      </svg>
+    );
+  };
+
+
+
 
   return (
     <div>
@@ -59,8 +91,25 @@ export default function Page() {
           duration: 0.1,
         }}
       />
+      <Cursor
+        attachToParent
+        variants={{
+          initial: { scale: 0.3, opacity: 0 },
+          animate: { scale: 1, opacity: 1 },
+          exit: { scale: 0.3, opacity: 0 },
+        }}
+        transition={{
+          ease: 'easeInOut',
+          duration: 0.15,
+        }}
+        className='left-12 top-4 z-50 '
+      >
+        <div>
+          <MouseIcon className='h-6 w-6' />
+        </div>
+      </Cursor>
       <div className={`${nunito.className} dark:bg-muted`}>
-        <div className="fixed  bottom-0 w-full flex flex-col items-center justify-center z-50">
+        <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
           <div className="pb-10">
             <TooltipProvider>
               <Dock iconDistance={0}>

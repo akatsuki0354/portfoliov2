@@ -40,7 +40,7 @@ function Projectlayouts(props: ProjectLayoutsProps) {
 
                     </div>
                     <div className='flex gap-2'>
-                        <button className='hover:bg-slate-500/10 p-1 border-1 border-slate-500/20  rounded-full'>
+                        <button className='hover:bg-slate-500/10 p-1 cursor-pointer border-1 border-slate-500/20  rounded-full'>
                             <ImageUpscale size={20} />
                         </button>
                         <a href={props.github} className='hover:bg-slate-500/10 p-1 border-1 border-slate-500/20  rounded-full'>
