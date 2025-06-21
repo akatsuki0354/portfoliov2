@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { ContactForm } from './contact-data'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
     AlertDialog,
     AlertDialogAction,
@@ -27,9 +27,16 @@ export function ContactLayouts({
     const [alertTitle, setAlertTitle] = useState<string>("");
     const [alertDescription, setAlertDescription] = useState<string>("");
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+    const [isClient, setIsClient] = useState<boolean>(false);
 
-    const SubmitData = async (e: any) => {
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    const SubmitData = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        if (!isClient) return;
+
         setIsSubmitting(true);
 
         try {
@@ -40,13 +47,35 @@ export function ContactLayouts({
             setEmail("")
             setName("")
             setMessage("")
-        } catch (error) {
+        } catch {
             setAlertTitle("Error");
             setAlertDescription("Failed to send your message. Please try again later.");
             setShowAlert(true);
         } finally {
             setIsSubmitting(false);
         }
+    }
+
+    // Don't render the form until we're on the client side
+    if (!isClient) {
+        return (
+            <div className={cn("flex flex-col gap-6", className)} {...props}>
+                <Card className="overflow-hidden">
+                    <CardContent className="grid p-0 md:grid-cols-2">
+                        <div className="p-6 md:p-8">
+                            <div className="flex flex-col items-center text-center">
+                                <h1 className="text-2xl font-bold">Contact Me</h1>
+                                <p className="text-balance text-muted-foreground">
+                                    Loading...
+                                </p>
+                            </div>
+                        </div>
+                        <div className="relative hidden rounded-l-2xl bg-muted md:block">
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
+        );
     }
 
     return (

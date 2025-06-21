@@ -13,4 +13,6 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
+
+// Initialize analytics only on client side
+export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
