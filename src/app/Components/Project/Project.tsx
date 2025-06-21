@@ -19,9 +19,8 @@ function Project() {
             <div>
                 <div className='flex justify-center p-2 gap-10 flex-wrap'>
                     {ProjectData.map((id) => (
-                        <Tilt rotationFactor={8} isRevese>
+                        <Tilt rotationFactor={8} key={id.id} isRevese>
                             <Projectlayouts
-                                key={id.id}
                                 photoAlt={id.description}
                                 photoURl={id.projectURL.src}
                                 title={id.title}

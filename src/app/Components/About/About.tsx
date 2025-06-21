@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/extension/carousel";
 import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { TextEffect } from "@/components/ui/text-effect";
 import Image from "next/image";
 
 const CarouselExample = () => {
@@ -55,7 +54,11 @@ const CarouselExample = () => {
                 <div className="">
                     <p className="max-w-7xl text-muted-foreground text-xl">
                         <TextAnimate animation="blurIn" duration={1} as="h1">
-                            I'm a creative problem-solver and passionate web developer who loves turning ideas into interactive, user-focused experiences. I believe great design meets great function, and I aim to build websites that not only look good—but feel right to use. Alongside crafting seamless interfaces, I also enjoy building reliable and scalable back-end systems that keep everything running smoothly behind the scenes.
+                            I&apos;m a creative problem-solver and passionate web developer who loves turning ideas into
+                            interactive, user-focused experiences. I believe great design meets great function, and I aim
+                            to build websites that not only look good—but feel right to use. Alongside crafting seamless
+                            interfaces, I also enjoy building reliable and scalable back-end systems that keep everything
+                            running smoothly behind the scenes.
                         </TextAnimate>
                     </p>
                     <div className="flex justify-center flex-wrap gap-2 mt-4">
