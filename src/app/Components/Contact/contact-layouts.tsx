@@ -6,6 +6,16 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { ContactForm } from './contact-data'
 import { useState } from 'react'
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from '@/components/ui/alert-dialog'
+
 export function ContactLayouts({
     className,
     ...props
@@ -13,13 +23,32 @@ export function ContactLayouts({
     const [message, setMessage] = useState<string>("");
     const [name, setName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
-    const SubmitData = (e: any) => {
+    const [showAlert, setShowAlert] = useState<boolean>(false);
+    const [alertTitle, setAlertTitle] = useState<string>("");
+    const [alertDescription, setAlertDescription] = useState<string>("");
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+    const SubmitData = async (e: any) => {
         e.preventDefault()
-        ContactForm(name, message, email)
-        setEmail("")
-        setName("")
-        setMessage("")
+        setIsSubmitting(true);
+
+        try {
+            await ContactForm(name, email, message);
+            setAlertTitle("Success!");
+            setAlertDescription("Your message has been sent successfully. I'll get back to you soon!");
+            setShowAlert(true);
+            setEmail("")
+            setName("")
+            setMessage("")
+        } catch (error) {
+            setAlertTitle("Error");
+            setAlertDescription("Failed to send your message. Please try again later.");
+            setShowAlert(true);
+        } finally {
+            setIsSubmitting(false);
+        }
     }
+
     return (
         <div className={cn("flex flex-col gap-6", className)} {...props}>
             <Card className="overflow-hidden">
@@ -41,6 +70,7 @@ export function ContactLayouts({
                                     onChange={e => setName(e.target.value)}
                                     value={name}
                                     required
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div className="grid gap-2">
@@ -52,6 +82,7 @@ export function ContactLayouts({
                                     value={email}
                                     onChange={e => setEmail(e.target.value)}
                                     required
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div className="grid gap-2">
@@ -62,10 +93,11 @@ export function ContactLayouts({
                                     onChange={e => setMessage(e.target.value)}
                                     value={message}
                                     required
+                                    disabled={isSubmitting}
                                 />
                             </div>
-                            <Button type="submit" className="w-full">
-                                Submit
+                            <Button type="submit" className="w-full" disabled={isSubmitting}>
+                                {isSubmitting ? "Sending..." : "Submit"}
                             </Button>
                         </div>
                     </form>
@@ -73,6 +105,20 @@ export function ContactLayouts({
                     </div>
                 </CardContent>
             </Card>
+
+            <AlertDialog open={showAlert} onOpenChange={setShowAlert}>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>{alertTitle}</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            {alertDescription}
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogAction>OK</AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
         </div>
     )
 }
