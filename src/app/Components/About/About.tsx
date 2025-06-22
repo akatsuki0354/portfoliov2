@@ -9,7 +9,7 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 
-const About = () => {
+const CarouselExample = () => {
     return (
         <div className="pt-24 m:mt-0 pb-24 text-center text-xl">
             <h1 className="md:text-6xl text-5xl font-semibold text-center mb-6">About</h1>
@@ -62,7 +62,6 @@ const About = () => {
                     <div className="flex justify-center flex-wrap gap-2 mt-4">
                         <span className="bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200 text-sm px-3 py-1 rounded-full">SASS</span>
                         <span className="bg-blue-200 text-blue-800 dark:bg-blue-700 dark:text-blue-200 text-sm px-3 py-1 rounded-full">Tailwind</span>
-                        <span className="bg-black text-white dark:bg-white dark:text-black text-sm px-3 py-1 rounded-full">Shadcn</span>
                         <span className="bg-purple-200 text-purple-800 dark:bg-purple-700 dark:text-purple-200 text-sm px-3 py-1 rounded-full">Bootstrap</span>
                         <span className="bg-yellow-200 text-yellow-800 dark:bg-yellow-700 dark:text-yellow-200 text-sm px-3 py-1 rounded-full">Design</span>
                         <span className="bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-sm px-3 py-1 rounded-full">Firebase</span>
@@ -78,4 +77,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default CarouselExample;
