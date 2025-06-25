@@ -9,7 +9,6 @@ import {
     AvatarFallback,
     AvatarImage,
 } from '@/components/ui/avatar';
-import { profile } from "console";
 const dataText = [
     "FrontEnd Web Developer",
     "BackEnd Web Developer",
@@ -42,7 +41,7 @@ function Home() {
                 <div className="flex justify-between items-center gap-5   profile_and_text" >
                     <div className="text_profile md:basis-[63%]">
                         <h1 className="h1_Name">
-                            <span className="text-muted-foreground ">Hello!</span> I&#39;m Franco
+                            <span className="text-muted-foreground ">Hello!</span> I&apos;m Franco
                         </h1>
                         <h1 className="title text-emerald-600 font-semibold -mt-2">
                             {text}
