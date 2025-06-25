@@ -2,9 +2,14 @@ import { CardDescription } from "@/components/ui/card";
 import Profile from "@/app/assets/img/transparent-profile1.png";
 import { useState, useEffect } from "react";
 import '../Home/Home.style.css'
-import Image from 'next/image'
 import { Tilt } from "../../../../components/motion-primitives/tilt";
-
+import { SpringElement } from '@/components/animate-ui/components/spring-element';
+import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+} from '@/components/ui/avatar';
+import { profile } from "console";
 const dataText = [
     "FrontEnd Web Developer",
     "BackEnd Web Developer",
@@ -34,7 +39,7 @@ function Home() {
     return (
         <div className="pb-24 lg:pb-0 flex justify-center place-items-center w-full">
             <div className="container home">
-                <div className="flex justify-between items-center   profile_and_text" >
+                <div className="flex justify-between items-center gap-5   profile_and_text" >
                     <div className="text_profile md:basis-[63%]">
                         <h1 className="h1_Name">
                             <span className="text-muted-foreground ">Hello!</span> I&#39;m Franco
@@ -44,7 +49,7 @@ function Home() {
                             <span className="animate-blink"></span>
                         </h1>
                         <CardDescription className="text-xl p-2 md:p-0 text-justify ">
-                            Based in Bulacan, I am a second-year college student at ICI with a deep passion for building and exploring digital solutions. Since 2021, I’ve been focused on growing as a web developer, constantly learning and refining my skills. While I enjoy playing chess and Mobile Legends in my free time, my true drive comes from creating meaningful web experiences and continuously improving in the tech space.
+                            Based in Bulacan, I am a second-year college student at ICI with a deep passion for building and exploring digital solutions. Since 2021, I've been focused on growing as a web developer, constantly learning and refining my skills. While I enjoy playing chess and Mobile Legends in my free time, my true drive comes from creating meaningful web experiences and continuously improving in the tech space.
                             <div className="mt-4 inline-talents flex gap-4">
                                 <span className="bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200 text-sm px-3 py-1 rounded-full">Web App</span>
                                 <span className="bg-blue-200 text-blue-800 dark:bg-blue-700 dark:text-blue-200 text-sm px-3 py-1 rounded-full">Responsive</span>
@@ -52,13 +57,19 @@ function Home() {
                             </div>
                         </CardDescription>
                     </div>
-                    <Tilt rotationFactor={10} isRevese className="img ">
-                        <div >
-                            <div className="img-child">
-                                <Image src={Profile} alt="franco-gregorio" />
-                            </div>
-                        </div>
-                    </Tilt>
+                    <div className="img">
+                        <SpringElement>
+                            <Tilt rotationFactor={10} isRevese>
+                                <Avatar className="size-90 AvatarImage ">
+                                    <AvatarImage
+                                        draggable={false}
+                                        src={Profile.src}
+                                    />
+                                    <AvatarFallback>AK</AvatarFallback>
+                                </Avatar>
+                            </Tilt>
+                        </SpringElement>
+                    </div>
                 </div>
             </div>
         </div>
