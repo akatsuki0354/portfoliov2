@@ -53,7 +53,6 @@ function Home() {
                                         draggable={false}
                                         src={Profile.src}
                                     />
-                                    {/* <AvatarFallback>FG</AvatarFallback> */}
                                 </Avatar>
                             </Tilt>
                         </SpringElement>
