@@ -1,6 +1,5 @@
 import { CardDescription } from "@/components/ui/card";
 import Profile from "@/app/assets/img/transparent-profile1.png";
-import { useState, useEffect } from "react";
 import '../Home/Home.style.css'
 import { Tilt } from "../../../../components/motion-primitives/tilt";
 import { SpringElement } from '@/components/animate-ui/components/spring-element';
