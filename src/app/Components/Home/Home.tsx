@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import '../Home/Home.style.css'
 import { Tilt } from "../../../../components/motion-primitives/tilt";
 import { SpringElement } from '@/components/animate-ui/components/spring-element';
+import { TypingText } from '@/components/animate-ui/text/typing';
 import {
     Avatar,
     AvatarFallback,
@@ -40,12 +41,17 @@ function Home() {
             <div className="container home">
                 <div className="flex justify-between items-center gap-5   profile_and_text" >
                     <div className="text_profile md:basis-[63%]">
-                        <h1 className="h1_Name">
+                        <h1 className="text-[clamp(2.25rem,5vw+1rem,6rem)] font-bold">
                             <span className="text-muted-foreground ">Hello!</span> I&apos;m Franco
                         </h1>
-                        <h1 className="title text-emerald-600 font-semibold -mt-2">
-                            {text}
-                            <span className="animate-blink"></span>
+                        <h1>
+                            <TypingText
+                                className="text-[clamp(2.25rem,2vw+1rem,3rem)]"
+                                text={dataText}
+                                cursor
+                                loop={true}
+                                cursorClassName="h-10"
+                            />
                         </h1>
                         <CardDescription className="text-xl p-2 md:p-0 text-justify ">
                             Based in Bulacan, I am a second-year college student at ICI with a deep passion for building and exploring digital solutions. Since 2021, I&apos;ve been focused on growing as a web developer, constantly learning and refining my skills. While I enjoy playing chess and Mobile Legends in my free time, my true drive comes from creating meaningful web experiences and continuously improving in the tech space.
@@ -59,7 +65,7 @@ function Home() {
                     <div className="img">
                         <SpringElement>
                             <Tilt rotationFactor={10} isRevese>
-                                <Avatar className="size-90 AvatarImage ">
+                                <Avatar className="size-70  lg:size-90 AvatarImage ">
                                     <AvatarImage
                                         draggable={false}
                                         src={Profile.src}
