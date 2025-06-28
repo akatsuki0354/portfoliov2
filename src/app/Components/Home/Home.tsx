@@ -22,12 +22,14 @@ function Home() {
                 <div className="flex justify-between items-center gap-5   profile_and_text" >
                     <div className="text_profile md:basis-[63%]">
                         <h1 className="text-[clamp(2.90rem,5vw+1rem,6rem)] font-bold">
-                            <span className="text-muted-foreground ">Hello!</span> I&apos;m Franco
+                            <span className="text-yellow-500">Hello!</span> I&apos;m Franco
                         </h1>
-                        <hr className="hidden md:block"/>
-                        <h1 className=" md:mt-3">
-                            <TypingText
-                                className="text-[clamp(2rem,5vw+1rem,3rem)]"
+                        <hr className="hidden md:block "/>
+                        <h1 className=" md:mt-3 text-[clamp(2rem,5vw+1rem,3rem)]">
+                            <span className="text-yellow-500">
+                            I am    
+                            </span> <TypingText
+                              
                                 text={dataText}
                                 cursor
                                 loop={true}

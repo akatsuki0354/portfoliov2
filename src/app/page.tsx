@@ -28,9 +28,10 @@ const nunito = Nunito({
   weight: ['400']
 })
 export default function Page() {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
   const [activeSection, setActiveSection] = useState('Home');
   const [isOverInput, setIsOverInput] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const handleMouseOver = (e: MouseEvent) => {
@@ -57,18 +58,41 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
-    const storedMode = localStorage.getItem('mode');
-    if (storedMode) setMode(storedMode);
+    const storedMode = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    const initialMode = storedMode || (prefersDark ? 'dark' : 'light');
+    setMode(initialMode);
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('mode', mode);
+    if (!isLoaded) return;
+    
+    localStorage.setItem('theme', mode);
+    
     if (mode === 'dark') {
+      document.documentElement.classList.add('dark');
       document.body.classList.add('dark');
     } else {
+      document.documentElement.classList.remove('dark');
       document.body.classList.remove('dark');
     }
-  }, [mode]);
+  }, [mode, isLoaded]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const handleChange = (e: MediaQueryListEvent) => {
+      const storedTheme = localStorage.getItem('theme');
+      if (!storedTheme) {
+        setMode(e.matches ? 'dark' : 'light');
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   useEffect(() => {
     const sections = ['Home', 'About', 'Project', 'Contact'];
@@ -133,7 +157,7 @@ export default function Page() {
           </div>
         )}
       </Cursor>
-      <div className={`${nunito.className} dark:bg-muted px-4 md:px-6 lg:px-0 lg:max-w-none mx-auto lg:mx-0`}>
+      <div className={`${nunito.className} bg-background/50 dark:bg-background/50  `}>
         <div>
 
           <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
@@ -209,25 +233,24 @@ export default function Page() {
             </div>
 
           </div>
-          <section id="Home">
+          <section id="Home" className="bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60">
             <Home />
           </section>
 
-          <section id="About">
+          <section id="About" className="bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60">
             <About />
           </section>
 
-          <section id="Project">
+          <section id="Project" className="bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60">
             <Project />
           </section>
 
-          <section id="Contact">
+          <section id="Contact" className="bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60">
             <Contact />
           </section>
-
+          <hr />
         </div>
       </div>
-      <hr />
       <Footer />
     </div>
   );

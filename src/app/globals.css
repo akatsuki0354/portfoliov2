@@ -123,6 +123,33 @@
   }
 }
 
+/* Enhanced background utilities */
+@layer utilities {
+  .bg-section {
+    @apply bg-gradient-to-b from-background via-background/80 to-muted/40;
+  }
+  
+  .bg-section-dark {
+    @apply dark:from-background dark:via-background/80 dark:to-muted/60;
+  }
+  
+  .bg-compatible {
+    @apply bg-background/50 dark:bg-background/50;
+  }
+  
+  .bg-subtle {
+    @apply bg-muted/30 dark:bg-muted/30;
+  }
+  
+  .bg-elevated {
+    @apply bg-card dark:bg-card;
+  }
+  
+  .bg-light-to-dark {
+    @apply bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60;
+  }
+}
+
 html, body{
   height: 100%;
   width: 100%;
