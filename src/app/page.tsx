@@ -23,6 +23,7 @@ import Footer from "./Components/Footer/Footer";
 import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
+import Loading from "@/components/loading";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -32,6 +33,7 @@ export default function Page() {
   const [activeSection, setActiveSection] = useState('Home');
   const [isOverInput, setIsOverInput] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleMouseOver = (e: MouseEvent) => {
@@ -60,17 +62,23 @@ export default function Page() {
   useEffect(() => {
     const storedMode = localStorage.getItem('theme') as 'light' | 'dark' | null;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     const initialMode = storedMode || (prefersDark ? 'dark' : 'light');
     setMode(initialMode);
     setIsLoaded(true);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     if (!isLoaded) return;
-    
+
     localStorage.setItem('theme', mode);
-    
+
     if (mode === 'dark') {
       document.documentElement.classList.add('dark');
       document.body.classList.add('dark');
@@ -82,7 +90,7 @@ export default function Page() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     const handleChange = (e: MediaQueryListEvent) => {
       const storedTheme = localStorage.getItem('theme');
       if (!storedTheme) {
@@ -127,9 +135,10 @@ export default function Page() {
   };
 
   return (
-
-    <div >
-
+    <div>
+      {isLoading && (
+        <Loading />
+      )}
       <Spotlight
         className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
         size={64}
