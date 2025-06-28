@@ -224,10 +224,11 @@ export default function Page() {
           <section id="Contact">
             <Contact />
           </section>
-          <hr />
-          <Footer />
+
         </div>
       </div>
+      <hr />
+      <Footer />
     </div>
   );
 }

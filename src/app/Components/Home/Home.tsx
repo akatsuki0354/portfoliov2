@@ -34,7 +34,7 @@ function Home() {
                                 cursorClassName="h-10"
                             />
                         </h1>
-                        <CardDescription className="text-xl p-2 md:p-0 text-justify ">
+                        <CardDescription className="text-xl p-2 md:p-0 text-center md:text-justify ">
                             Based in Bulacan, I am a second-year college student at ICI with a deep passion for building and exploring digital solutions. Since 2021, I&apos;ve been focused on growing as a web developer, constantly learning and refining my skills. While I enjoy playing chess and Mobile Legends in my free time, my true drive comes from creating meaningful web experiences and continuously improving in the tech space.
                             <div className="mt-4 inline-talents flex gap-4">
                                 <span className="bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200 text-sm px-3 py-1 rounded-full">Web App</span>
@@ -46,12 +46,12 @@ function Home() {
                     <div className="img">
                         <SpringElement>
                             <Tilt rotationFactor={10} isRevese>
-                                <Avatar className="size-70  lg:size-90 AvatarImage ">
+                                <Avatar className="size-60 sm:size-70 lg:size-90 AvatarImage ">
                                     <AvatarImage
                                         draggable={false}
                                         src={Profile.src}
                                     />
-                                    <AvatarFallback>AK</AvatarFallback>
+                                    {/* <AvatarFallback>FG</AvatarFallback> */}
                                 </Avatar>
                             </Tilt>
                         </SpringElement>
