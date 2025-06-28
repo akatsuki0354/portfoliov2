@@ -16,25 +16,6 @@ const dataText = [
     "Full Stack Web Developer",
 ];
 function Home() {
-    const [text, setText] = useState("");
-    const [index, setIndex] = useState(0);
-    const [charIndex, setCharIndex] = useState(0);
-    useEffect(() => {
-        if (charIndex < dataText[index].length) {
-            const timeout = setTimeout(() => {
-                setText((prev) => prev + dataText[index][charIndex]);
-                setCharIndex(charIndex + 1);
-            }, 100);
-
-            return () => clearTimeout(timeout);
-        } else {
-            setTimeout(() => {
-                setText("");
-                setCharIndex(0);
-                setIndex((prev) => (prev + 1) % dataText.length);
-            }, 700);
-        }
-    }, [charIndex, index]);
 
     return (
         <div className="pb-24 lg:pb-0 flex justify-center place-items-center w-full">
@@ -44,6 +25,7 @@ function Home() {
                         <h1 className="text-[clamp(2.25rem,5vw+1rem,6rem)] font-bold">
                             <span className="text-muted-foreground ">Hello!</span> I&apos;m Franco
                         </h1>
+                        {/* <hr /> */}
                         <h1>
                             <TypingText
                                 className="text-[clamp(2.25rem,2vw+1rem,3rem)]"
