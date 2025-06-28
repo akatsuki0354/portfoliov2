@@ -7,7 +7,8 @@ import {
     MorphingDialogClose,
     MorphingDialogDescription,
     MorphingDialogContainer,
-} from '@/components/ui/morphing-dialog';
+
+} from '../../../../components/motion-primitives/morphing-dialog';
 import { ArrowUpRight, GithubIcon, ImageUpscale } from 'lucide-react';
 import { ProjectLayoutsProps } from './project-data';
 import { Tilt } from '../../../../components/motion-primitives/tilt';

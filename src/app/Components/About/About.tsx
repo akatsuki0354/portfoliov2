@@ -8,12 +8,14 @@ import {
 import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
+import TextHeader from "@/components/text-header";
 
 const CarouselExample = () => {
     return (
         <div className="pt-24 m:mt-0 pb-24 text-center text-xl">
-            <h1 className="md:text-6xl text-5xl font-semibold text-center mb-6">About</h1>
-
+            <TextHeader
+            text="About"
+            />
             <blockquote className="mb-6 text-muted-foreground text-xl border-l-2 italic text-center">
                 <TextAnimate animation="blurIn" as="h1" duration={1}>
                     &quot;Great developers aren&#39;t born—they&#39;re made through consistency, curiosity, and code.&quot;

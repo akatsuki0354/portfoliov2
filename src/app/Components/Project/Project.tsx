@@ -3,10 +3,13 @@ import { ProjectData } from './project-data'
 import Projectlayouts from './project-layouts'
 import { TextAnimate } from '@/components/magicui/text-animate'
 import { Tilt } from '../../../../components/motion-primitives/tilt'
+import TextHeader from '@/components/text-header'
 function Project() {
     return (
         <div className='pt-24 pb-24'>
-            <h1 className="md:text-6xl text-5xl font-semibold text-center mb-5">Project</h1>
+            <TextHeader
+                text="Project"
+            />
             <p className="text-center text-muted-foreground text-xl  max-w-5xl mx-auto mb-10">
                 <TextAnimate animation="blurIn" duration={1} as="h1">
                     Explore a collection of my featured projects showcasing skills in design, development, and
