@@ -145,16 +145,7 @@ export default function Page() {
       )}
       
       {/* Enhanced Background Animation System */}
-      <div className="background-container">
-        {/* Main gradient background */}
-        {/* <div className="background-gradient"></div> */}
-        
-        {/* Dynamic gradient overlay */}
-        {/* <div className="dynamic-gradient"></div> */}
-        
-        {/* Aurora effect */}
-        {/* <div className="aurora-effect"></div> */}
-        
+      <div className="background-container">    
         {/* Breathing circles */}
         <div className="breathing-circle"></div>
         <div className="breathing-circle"></div>
@@ -169,14 +160,10 @@ export default function Page() {
         </div>
         
         {/* Floating orbs with glow */}
-        {/* <div className="floating-orb"></div>
         <div className="floating-orb"></div>
-        <div className="floating-orb"></div> */}
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
         
-        {/* Animated mesh gradient overlay */}
-        {/* <div className="mesh-gradient"></div> */}
-        
-      
         <div className="floating-shapes">
           <div className="floating-shape"></div>
           <div className="floating-shape"></div>
@@ -190,40 +177,7 @@ export default function Page() {
         
         {/* Noise texture */}
         <div className="noise-texture"></div>
-        
-        {/* Animated particles */}
-        {/* <div className="particles">
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-          <div className="particle"></div>
-        </div> */}
       </div>
-
-      {/* Additional Animated Background Component */}
-      {/* <AnimatedBackground 
-        variant="all" 
-        intensity="subtle" 
-        className="z-5"
-      /> */}
-
-      {/* Interactive Particles Component */}
-      {/* <div className="fixed inset-0 pointer-events-none z-10">
-        <Particles
-          quantity={20}
-          staticity={40}
-          ease={60}
-          size={10}
-          color="#3b82f6"
-          vx={0.05}
-          vy={0.05}
-        />
-      </div> */}
-
       <Spotlight
         className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
         size={64}
