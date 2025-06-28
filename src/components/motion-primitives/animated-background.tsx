@@ -158,7 +158,7 @@ export function AnimatedBackground({
       )}
 
       {/* Wave Effect */}
-      {/* {(variant === 'wave' || variant === 'all') && (
+      {(variant === 'wave' || variant === 'all') && (
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-blue-100/30 dark:from-blue-900/30 to-transparent"
@@ -186,7 +186,7 @@ export function AnimatedBackground({
             }}
           />
         </div>
-      )} */}
+      )}
 
       {/* Canvas for Particles */}
       {variant === 'particles' && (
