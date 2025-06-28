@@ -7,15 +7,15 @@ import { cn } from '@/lib/utils';
 interface AnimatedBackgroundProps {
   className?: string;
   variant?: 'gradient' | 'particles' | 'geometric' | 'wave' | 'all';
-  intensity?: 'subtle' | 'medium' | 'intense';
-  color?: string;
+  // // intensity?: 'subtle' | 'medium' | 'intense';
+  // color?: string;
 }
 
 export function AnimatedBackground({
   className,
   variant = 'all',
-  intensity = 'medium',
-  color = 'primary'
+  // intensity = 'medium',
+  // color = 'primary'
 }: AnimatedBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
@@ -85,11 +85,11 @@ export function AnimatedBackground({
     };
   }, [variant]);
 
-  const intensityClasses = {
-    subtle: 'opacity-20',
-    medium: 'opacity-40',
-    intense: 'opacity-60'
-  };
+  // const intensityClasses = {
+  //   subtle: 'opacity-20',
+  //   medium: 'opacity-40',
+  //   intense: 'opacity-60'
+  // };
 
   return (
     <div className={cn('fixed inset-0 pointer-events-none z-0', className)}>

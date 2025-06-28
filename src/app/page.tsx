@@ -24,8 +24,6 @@ import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
 import Loading from "@/components/loading";
-import { Particles } from "@/components/magicui/particles";
-import { AnimatedBackground } from "@/components/motion-primitives/animated-background";
 
 const nunito = Nunito({
   subsets: ['latin'],
