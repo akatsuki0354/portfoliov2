@@ -24,10 +24,14 @@ import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
 import Loading from "@/components/loading";
+import { Particles } from "@/components/magicui/particles";
+import { AnimatedBackground } from "@/components/motion-primitives/animated-background";
+
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
 })
+
 export default function Page() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
   const [activeSection, setActiveSection] = useState('Home');
@@ -139,6 +143,87 @@ export default function Page() {
       {isLoading && (
         <Loading />
       )}
+      
+      {/* Enhanced Background Animation System */}
+      <div className="background-container">
+        {/* Main gradient background */}
+        {/* <div className="background-gradient"></div> */}
+        
+        {/* Dynamic gradient overlay */}
+        {/* <div className="dynamic-gradient"></div> */}
+        
+        {/* Aurora effect */}
+        {/* <div className="aurora-effect"></div> */}
+        
+        {/* Breathing circles */}
+        <div className="breathing-circle"></div>
+        <div className="breathing-circle"></div>
+        <div className="breathing-circle"></div>
+        
+        {/* Tech-inspired accent lines */}
+        <div className="tech-lines">
+          <div className="tech-line"></div>
+          <div className="tech-line"></div>
+          <div className="tech-line"></div>
+          <div className="tech-line"></div>
+        </div>
+        
+        {/* Floating orbs with glow */}
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
+        <div className="floating-orb"></div>
+        
+        {/* Animated mesh gradient overlay */}
+        {/* <div className="mesh-gradient"></div> */}
+        
+        {/* Floating geometric shapes
+        <div className="floating-shapes">
+          <div className="floating-shape"></div>
+          <div className="floating-shape"></div>
+          <div className="floating-shape"></div>
+          <div className="floating-shape"></div>
+          <div className="floating-shape"></div>
+        </div> */}
+        
+        {/* Grid pattern overlay */}
+        {/* <div className="grid-pattern"></div> */}
+        
+        {/* Noise texture */}
+        {/* <div className="noise-texture"></div> */}
+        
+        {/* Animated particles */}
+        <div className="particles">
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+          <div className="particle"></div>
+        </div>
+      </div>
+
+      {/* Additional Animated Background Component */}
+      <AnimatedBackground 
+        variant="all" 
+        intensity="subtle" 
+        className="z-5"
+      />
+
+      {/* Interactive Particles Component */}
+      <div className="fixed inset-0 pointer-events-none z-10">
+        <Particles
+          quantity={40}
+          staticity={40}
+          ease={60}
+          size={1.2}
+          color="#3b82f6"
+          vx={0.05}
+          vy={0.05}
+        />
+      </div>
+
       <Spotlight
         className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
         size={64}
@@ -166,7 +251,7 @@ export default function Page() {
           </div>
         )}
       </Cursor>
-      <div className={`${nunito.className} bg-background/50 dark:bg-background/50  `}>
+      <div className={`${nunito.className} relative z-20`}>
         <div>
 
           <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
@@ -242,19 +327,19 @@ export default function Page() {
             </div>
 
           </div>
-          <section id="Home" className="bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60">
+          <section id="Home" className="">
             <Home />
           </section>
 
-          <section id="About" className="bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60">
+          <section id="About" className="">
             <About />
           </section>
 
-          <section id="Project" className="bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60">
+          <section id="Project" className="">
             <Project />
           </section>
 
-          <section id="Contact" className="bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60">
+          <section id="Contact" className="">
             <Contact />
           </section>
           <hr />
