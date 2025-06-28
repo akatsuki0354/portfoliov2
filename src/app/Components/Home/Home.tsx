@@ -21,13 +21,13 @@ function Home() {
             <div className="container home">
                 <div className="flex justify-between items-center gap-5   profile_and_text" >
                     <div className="text_profile md:basis-[63%]">
-                        <h1 className="text-[clamp(2.25rem,5vw+1rem,6rem)] font-bold">
+                        <h1 className="text-[clamp(2.90rem,5vw+1rem,6rem)] font-bold">
                             <span className="text-muted-foreground ">Hello!</span> I&apos;m Franco
                         </h1>
-                        {/* <hr /> */}
-                        <h1>
+                        <hr className="hidden md:block"/>
+                        <h1 className=" md:mt-3">
                             <TypingText
-                                className="text-[clamp(2.25rem,2vw+1rem,3rem)]"
+                                className="text-[clamp(2rem,5vw+1rem,3rem)]"
                                 text={dataText}
                                 cursor
                                 loop={true}

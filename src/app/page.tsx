@@ -23,8 +23,6 @@ import Footer from "./Components/Footer/Footer";
 import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
-// import { Particles } from "@/components/magicui/particles";
-// import { useTheme } from "next-themes";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -34,14 +32,6 @@ export default function Page() {
   const [activeSection, setActiveSection] = useState('Home');
   const [isOverInput, setIsOverInput] = useState(false);
 
-  // const { resolvedTheme } = useTheme();
-  // const [color, setColor] = useState("#ffffff");
-
-  // useEffect(() => {
-  //   setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
-  // }, [resolvedTheme]);
-
-  // Handle cursor visibility over input elements
   useEffect(() => {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -113,14 +103,9 @@ export default function Page() {
   };
 
   return (
+
     <div >
-      {/* <Particles
-        className="absolute inset-0 z-0"
-        quantity={2500}
-        ease={90}
-        color={color}
-        refresh
-      /> */}
+
       <Spotlight
         className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
         size={64}
@@ -148,97 +133,100 @@ export default function Page() {
           </div>
         )}
       </Cursor>
-      <div className={`${nunito.className} dark:bg-muted`}>
-        <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
-          <div className="pb-10">
-            <TooltipProvider>
-              <Dock iconDistance={0}>
-                {DATA.navbar.map((item) => (
-                  <DockIcon key={item.label}>
+      <div className={`${nunito.className} dark:bg-muted px-4 md:px-6 lg:px-0 lg:max-w-none mx-auto lg:mx-0`}>
+        <div>
+
+          <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
+            <div className="pb-10">
+              <TooltipProvider>
+                <Dock iconDistance={0}>
+                  {DATA.navbar.map((item) => (
+                    <DockIcon key={item.label}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Link
+                            href={item.href}
+                            aria-label={item.label}
+                            className={cn(
+                              buttonVariants({ variant: "ghost", size: "icon" }),
+                              "size-12 rounded-full relative",
+                              activeSection === item.label && "bg-primary/20 ring-2 ring-primary/50"
+                            )}
+                          >
+                            <item.icon className="size-4" />
+                            {activeSection === item.label && (
+                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse" />
+                            )}
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{item.label}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </DockIcon>
+                  ))}
+                  <Separator orientation="vertical" className="h-full" />
+                  {Object.entries(DATA.contact.social).map(([name, social]) => (
+                    <DockIcon key={name}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Link
+                            href={social.url}
+                            aria-label={social.name}
+                            className={cn(
+                              buttonVariants({ variant: "ghost", size: "icon" }),
+                              "size-12 rounded-full",
+                            )}
+                          >
+                            <social.icon className="size-4" />
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{name}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </DockIcon>
+                  ))}
+                  <Separator orientation="vertical" className="h-full py-2" />
+                  <DockIcon>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Link
-                          href={item.href}
-                          aria-label={item.label}
-                          className={cn(
-                            buttonVariants({ variant: "ghost", size: "icon" }),
-                            "size-12 rounded-full relative",
-                            activeSection === item.label && "bg-primary/20 ring-2 ring-primary/50"
+                        <span className='mode'>
+                          {mode === 'light' ? (
+                            <Button variant={'ghost'} onClick={toggleMode}><MoonIcon /></Button>
+                          ) : (
+                            <Button variant={'ghost'} onClick={toggleMode}><Sun /></Button>
                           )}
-                        >
-                          <item.icon className="size-4" />
-                          {activeSection === item.label && (
-                            <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary rounded-full animate-pulse" />
-                          )}
-                        </Link>
+                        </span>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>{item.label}</p>
+                        <p>Theme</p>
                       </TooltipContent>
                     </Tooltip>
                   </DockIcon>
-                ))}
-                <Separator orientation="vertical" className="h-full" />
-                {Object.entries(DATA.contact.social).map(([name, social]) => (
-                  <DockIcon key={name}>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Link
-                          href={social.url}
-                          aria-label={social.name}
-                          className={cn(
-                            buttonVariants({ variant: "ghost", size: "icon" }),
-                            "size-12 rounded-full",
-                          )}
-                        >
-                          <social.icon className="size-4" />
-                        </Link>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>{name}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </DockIcon>
-                ))}
-                <Separator orientation="vertical" className="h-full py-2" />
-                <DockIcon>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <span className='mode'>
-                        {mode === 'light' ? (
-                          <Button variant={'ghost'} onClick={toggleMode}><MoonIcon /></Button>
-                        ) : (
-                          <Button variant={'ghost'} onClick={toggleMode}><Sun /></Button>
-                        )}
-                      </span>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Theme</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </DockIcon>
-              </Dock>
-            </TooltipProvider>
+                </Dock>
+              </TooltipProvider>
+            </div>
+
           </div>
+          <section id="Home">
+            <Home />
+          </section>
 
+          <section id="About">
+            <About />
+          </section>
+
+          <section id="Project">
+            <Project />
+          </section>
+
+          <section id="Contact">
+            <Contact />
+          </section>
+          <hr />
+          <Footer />
         </div>
-        <section id="Home">
-          <Home />
-        </section>
-
-        <section id="About">
-          <About />
-        </section>
-
-        <section id="Project">
-          <Project />
-        </section>
-
-        <section id="Contact">
-          <Contact />
-        </section>
-        <hr />
-        <Footer />
       </div>
     </div>
   );
