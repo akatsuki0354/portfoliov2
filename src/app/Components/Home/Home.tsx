@@ -6,7 +6,7 @@ import { SpringElement } from '@/components/animate-ui/components/spring-element
 import { TypingText } from '@/components/animate-ui/text/typing';
 import {
     Avatar,
-    AvatarFallback,
+    // AvatarFallback,
     AvatarImage,
 } from '@/components/ui/avatar';
 const dataText = [
