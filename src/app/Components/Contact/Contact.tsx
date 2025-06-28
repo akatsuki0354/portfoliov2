@@ -4,7 +4,7 @@ import { TextAnimate } from '@/components/magicui/text-animate'
 import TextHeader from '@/components/text-header'
 function Contact() {
     return (
-        <div className='pt-24 pb-24'>
+        <div className=' pb-24'>
              <TextHeader
             text="Contact"
             />

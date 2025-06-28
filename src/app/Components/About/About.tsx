@@ -12,7 +12,7 @@ import TextHeader from "@/components/text-header";
 
 const CarouselExample = () => {
     return (
-        <div className="pt-24 m:mt-0 pb-24 text-center text-xl">
+        <div className="pt-24 m:mt-0  text-center text-xl">
             <TextHeader
             text="About"
             />

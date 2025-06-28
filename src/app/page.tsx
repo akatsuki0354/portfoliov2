@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -24,131 +24,27 @@ import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
 import Loading from "@/components/loading";
-
+import { usePageState } from "@/hooks/usePageState";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
 })
 
 export default function Page() {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
-  const [activeSection, setActiveSection] = useState('Home');
-  const [isOverInput, setIsOverInput] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.contentEditable === 'true') {
-        setIsOverInput(true);
-      }
-    };
-
-    const handleMouseOut = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.contentEditable === 'true') {
-        setIsOverInput(false);
-      }
-    };
-
-    document.addEventListener('mouseover', handleMouseOver);
-    document.addEventListener('mouseout', handleMouseOut);
-
-    return () => {
-      document.removeEventListener('mouseover', handleMouseOver);
-      document.removeEventListener('mouseout', handleMouseOut);
-    };
-  }, []);
-
-  useEffect(() => {
-    const storedMode = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    const initialMode = storedMode || (prefersDark ? 'dark' : 'light');
-    setMode(initialMode);
-    setIsLoaded(true);
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!isLoaded) return;
-
-    localStorage.setItem('theme', mode);
-
-    if (mode === 'dark') {
-      document.documentElement.classList.add('dark');
-      document.body.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      document.body.classList.remove('dark');
-    }
-  }, [mode, isLoaded]);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      const storedTheme = localStorage.getItem('theme');
-      if (!storedTheme) {
-        setMode(e.matches ? 'dark' : 'light');
-      }
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  useEffect(() => {
-    const sections = ['Home', 'About', 'Project', 'Contact'];
-    const observers: IntersectionObserver[] = [];
-
-    sections.forEach((sectionId) => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              setActiveSection(sectionId);
-            }
-          },
-          {
-            threshold: 0.2,
-            rootMargin: '-10% 0px -10% 0px'
-          }
-        );
-        observer.observe(section);
-        observers.push(observer);
-      }
-    });
-
-    return () => {
-      observers.forEach(observer => observer.disconnect());
-    };
-  }, []);
-
-  const toggleMode = () => {
-    setMode(mode === 'light' ? 'dark' : 'light');
-  };
-
+  const { mode, activeSection, isOverInput, isLoading, toggleMode } = usePageState();
   return (
     <div>
       {isLoading && (
         <Loading />
       )}
-      
+
       {/* Enhanced Background Animation System */}
-      <div className="background-container">    
+      <div className="background-container">
         {/* Breathing circles */}
         <div className="breathing-circle"></div>
         <div className="breathing-circle"></div>
         <div className="breathing-circle"></div>
-        
+
         {/* Tech-inspired accent lines */}
         <div className="tech-lines">
           <div className="tech-line"></div>
@@ -156,12 +52,12 @@ export default function Page() {
           <div className="tech-line"></div>
           <div className="tech-line"></div>
         </div>
-        
+
         {/* Floating orbs with glow */}
         <div className="floating-orb"></div>
         <div className="floating-orb"></div>
         <div className="floating-orb"></div>
-        
+
         <div className="floating-shapes">
           <div className="floating-shape"></div>
           <div className="floating-shape"></div>
@@ -169,10 +65,10 @@ export default function Page() {
           <div className="floating-shape"></div>
           <div className="floating-shape"></div>
         </div>
-        
+
         {/* Grid pattern overlay */}
         <div className="grid-pattern"></div>
-        
+
         {/* Noise texture */}
         <div className="noise-texture"></div>
       </div>
