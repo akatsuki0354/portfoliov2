@@ -45,7 +45,7 @@ function Home() {
                             </div>
                         </CardDescription>
                     </div>
-                    <div className="img">
+                    <div className="img mt-15 lg:mt-0">
                         <SpringElement>
                             <Tilt rotationFactor={10} isRevese>
                                 <Avatar className="size-60 sm:size-70 lg:size-90 AvatarImage ">
