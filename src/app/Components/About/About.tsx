@@ -9,6 +9,7 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
+import { SiCss3, SiMarkdown, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity,  SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion,  SiSupabase,  SiAndroidstudio } from "react-icons/si";
 
 const CarouselExample = () => {
     return (
@@ -56,7 +57,7 @@ const CarouselExample = () => {
                 <div className="max-w-7xl">
                     <div className="mb-6">
                         <TextHeader
-                        variant="sub"
+                            variant="sub"
                             text="Who I Am"
                         />
                     </div>
@@ -109,15 +110,83 @@ const CarouselExample = () => {
                         />
                     </div>
                     <div className="flex justify-center flex-wrap gap-3">
-                        <span className="bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">SASS</span>
-                        <span className="bg-blue-200 text-blue-800 dark:bg-blue-700 dark:text-blue-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">Tailwind</span>
-                        <span className="bg-purple-200 text-purple-800 dark:bg-purple-700 dark:text-purple-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">Bootstrap</span>
-                        <span className="bg-yellow-200 text-yellow-800 dark:bg-yellow-700 dark:text-yellow-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">Design</span>
-                        <span className="bg-orange-200 text-orange-800 dark:bg-orange-700 dark:text-orange-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">Firebase</span>
-                        <span className="bg-gray-300 text-gray-800 dark:bg-gray-700 dark:text-gray-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">Node.js</span>
-                        <span className="bg-cyan-200 text-cyan-800 dark:bg-cyan-700 dark:text-cyan-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">React</span>
-                        <span className="bg-yellow-300 text-yellow-900 dark:bg-yellow-700 dark:text-yellow-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">JavaScript</span>
-                        <span className="bg-indigo-200 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-200 text-sm px-4 py-2 rounded-full font-medium shadow-sm hover:shadow-md transition-shadow">TypeScript</span>
+                        <span className="bg-[#1572B6] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiCss3 className="mr-2" /> CSS3
+                        </span>
+                        {/* <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiMarkdown className="mr-2" /> Markdown
+                        </span> */}
+                        <span className="bg-[#007ACC] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiTypescript className="mr-2" /> TypeScript
+                        </span>
+                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiVercel className="mr-2" /> Vercel
+                        </span>
+                        <span className="bg-[#0170FE] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiAntdesign className="mr-2" /> Ant Design
+                        </span>
+                        <span className="bg-[#8511FA] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiBootstrap className="mr-2" /> Bootstrap
+                        </span>
+                        <span className="bg-[#4ED1C5] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiChakraui className="mr-2" /> Chakra
+                        </span>
+                        <span className="bg-[#6DA55F] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiNodedotjs className="mr-2" /> Node.js
+                        </span>
+                        <span className="bg-[#2C8EBB] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiYarn className="mr-2" /> Yarn
+                        </span>
+                        <span className="bg-[#F05033] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiGit className="mr-2" /> Git
+                        </span>
+                        <span className="bg-[#121011] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiGithub className="mr-2" /> GitHub
+                        </span>
+                        {/* <span className="bg-[#000000] text-[#FF7139] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiNotion className="mr-2" /> Portfolio
+                        </span> */}
+                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiUnity className="mr-2" /> Unity
+                        </span>
+                    
+                        <span className="bg-[#039BE5] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiFirebase className="mr-2" /> Firebase
+                        </span>
+                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiNextdotjs className="mr-2" /> Next.js
+                        </span>
+                        <span className="bg-[#323330] text-[#F7DF1E] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiJavascript className="mr-2" /> JavaScript
+                        </span>
+                        <span className="bg-[#E34F26] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiHtml5 className="mr-2" /> HTML5
+                        </span>
+                        <span className="bg-[#CF649A] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiSass className="mr-2" /> SASS
+                        </span>
+                        <span className="bg-[#3670A0] text-[#ffdd54] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiPython className="mr-2" /> Python
+                        </span>
+                        <span className="bg-[#20232A] text-[#61DAFB] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiReact className="mr-2" /> React
+                        </span>
+                        <span className="bg-[#38B2AC] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiTailwindcss className="mr-2" /> TailwindCSS
+                        </span>
+                        <span className="bg-[#F5792A] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiBlender className="mr-2" /> Blender
+                        </span>
+                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiNotion className="mr-2" /> Notion
+                        </span>
+                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiSupabase className="mr-2" /> Supabase
+                        </span>
+                       
+                        <span className="bg-green-600 text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
+                            <SiAndroidstudio className="mr-2" /> Android Studio
+                        </span>
                     </div>
                 </div>
             </div>
