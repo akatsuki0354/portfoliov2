@@ -15,7 +15,7 @@ import { DATA } from '@/app/page-data'
 import Link from "next/link";
 import { Sun, MoonIcon } from "lucide-react";
 export default function Navbar() {
-    const { mode, activeSection, isOverInput, isLoading, toggleMode } = usePageState();
+    const { mode, activeSection, toggleMode } = usePageState();
     return (
         <div>
             <div className="pb-10">
