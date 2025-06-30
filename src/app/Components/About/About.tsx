@@ -9,7 +9,7 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
-import { SiCss3, SiMarkdown, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity,  SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion,  SiSupabase,  SiAndroidstudio } from "react-icons/si";
+import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity,  SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion,  SiSupabase,  SiAndroidstudio } from "react-icons/si";
 
 const CarouselExample = () => {
     return (
