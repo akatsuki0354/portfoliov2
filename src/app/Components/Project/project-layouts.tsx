@@ -7,7 +7,6 @@ import {
     MorphingDialogClose,
     MorphingDialogDescription,
     MorphingDialogContainer,
-
 } from '../../../../components/motion-primitives/morphing-dialog';
 import { ArrowUpRight, GithubIcon, ImageUpscale } from 'lucide-react';
 import { ProjectLayoutsProps } from './project-data';
@@ -22,8 +21,7 @@ function Projectlayouts(props: ProjectLayoutsProps) {
                 type: 'spring',
                 bounce: 0.05,
                 duration: 0.25,
-            }}
-        >
+            }}>
             <MorphingDialogTrigger
                 style={{
                     borderRadius: '12px',
@@ -113,7 +111,6 @@ function Projectlayouts(props: ProjectLayoutsProps) {
                                             'bg-gray-300 text-gray-800 dark:bg-gray-700 dark:text-gray-200',
                                             'bg-cyan-200 text-cyan-800 dark:bg-cyan-700 dark:text-cyan-200',
                                             'bg-yellow-300 text-yellow-900 dark:bg-yellow-700 dark:text-yellow-200',
-
                                         ];
                                         const colorClass = badgeColors[idx % badgeColors.length];
                                         return (

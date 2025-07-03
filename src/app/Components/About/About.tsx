@@ -9,7 +9,7 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
-import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity,  SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion,  SiSupabase,  SiAndroidstudio } from "react-icons/si";
+import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion, SiSupabase, SiAndroidstudio } from "react-icons/si";
 
 const CarouselExample = () => {
     return (
@@ -149,7 +149,7 @@ const CarouselExample = () => {
                         <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
                             <SiUnity className="mr-2" /> Unity
                         </span>
-                    
+
                         <span className="bg-[#039BE5] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
                             <SiFirebase className="mr-2" /> Firebase
                         </span>
@@ -183,7 +183,7 @@ const CarouselExample = () => {
                         <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
                             <SiSupabase className="mr-2" /> Supabase
                         </span>
-                       
+
                         <span className="bg-green-600 text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
                             <SiAndroidstudio className="mr-2" /> Android Studio
                         </span>
