@@ -18,12 +18,18 @@ import { Sun, MoonIcon } from "lucide-react";
 import '../Navbar/nav.style.css'
 
 export default function Navbar() {
-    const { mode, toggleMode } = usePageState();
+    const { mode, toggleMode, activeSection } = usePageState();
     const containerRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLUListElement>(null);
     const filterRef = useRef<HTMLSpanElement>(null);
     const textRef = useRef<HTMLSpanElement>(null);
-    const [activeIndex, setActiveIndex] = useState<number>(0);
+    
+    // Map activeSection to navbar index
+    const getActiveIndex = () => {
+        return DATA.navbar.findIndex(item => item.href === `#${activeSection}`);
+    };
+    
+    const activeIndex = getActiveIndex();
 
     const noise = (n = 1) => n / 2 - Math.random() * n;
 
@@ -107,8 +113,6 @@ export default function Navbar() {
 
     const handleClick = (e: React.MouseEvent<HTMLLIElement>, index: number) => {
         const liEl = e.currentTarget;
-        if (activeIndex === index) return;
-        setActiveIndex(index);
         updateEffectPosition(liEl);
         if (filterRef.current) {
             const particles = filterRef.current.querySelectorAll(".particle");
