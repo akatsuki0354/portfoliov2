@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect} from 'react'
 import { buttonVariants } from "@/components/ui/button";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -112,6 +112,7 @@ export default function Navbar() {
     };
 
     const handleClick = (e: React.MouseEvent<HTMLLIElement>, index: number) => {
+        console.log(index)
         const liEl = e.currentTarget;
         updateEffectPosition(liEl);
         if (filterRef.current) {
