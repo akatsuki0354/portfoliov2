@@ -13,6 +13,7 @@ import Loading from "@/components/loading";
 import { usePageState } from "@/hooks/usePageState";
 import Navbar from "./Components/Navbar/navbar";
 import BackgroundAnimation from "./background-animation";
+import ClickSpark from "@/components/click-spark";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -22,64 +23,71 @@ export default function Page() {
   const { isLoading, isOverInput } = usePageState();
 
   return (
-    <div>
-      {isLoading && (
-        <Loading />
-      )}
-      <BackgroundAnimation />
-      <Spotlight
-        className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
-        size={64}
-        springOptions={{
-          bounce: 0.3,
-          duration: 0.1,
-        }}
-      />
-      <Cursor
-        attachToParent
-        variants={{
-          initial: { scale: 0.3, opacity: 0 },
-          animate: { scale: 1, opacity: 1 },
-          exit: { scale: 0.3, opacity: 0 },
-        }}
-        transition={{
-          ease: 'easeInOut',
-          duration: 0.15,
-        }}
-        className=' z-50'
-      >
-        {!isOverInput && (
-          <div>
-            <MouseIcon className='h-6 w-6' />
-          </div>
+    <ClickSpark
+      sparkColor='#fff'
+      sparkSize={10}
+      sparkRadius={15}
+      sparkCount={8}
+      duration={400}
+    >
+      <div>
+        {isLoading && (
+          <Loading />
         )}
-      </Cursor>
-      <div className={`${nunito.className} relative z-20`}>
-        <div>
+        <BackgroundAnimation />
+        <Spotlight
+          className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
+          size={64}
+          springOptions={{
+            bounce: 0.3,
+            duration: 0.1,
+          }}
+        />
+        <Cursor
+          attachToParent
+          variants={{
+            initial: { scale: 0.3, opacity: 0 },
+            animate: { scale: 1, opacity: 1 },
+            exit: { scale: 0.3, opacity: 0 },
+          }}
+          transition={{
+            ease: 'easeInOut',
+            duration: 0.15,
+          }}
+          className=' z-50'
+        >
+          {!isOverInput && (
+            <div>
+              <MouseIcon className='h-6 w-6' />
+            </div>
+          )}
+        </Cursor>
+        <div className={`${nunito.className} relative z-20`}>
+          <div>
+            <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
+              <Navbar />
+            </div>
 
-          <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
-            <Navbar />
+            <section id="Home" className="">
+              <Home />
+            </section>
+
+            <section id="About" className="">
+              <About />
+            </section>
+
+            <section id="Project" className="">
+              <Project />
+            </section>
+
+            <section id="Contact" className="">
+              <Contact />
+            </section>
+            <hr />
           </div>
-
-          <section id="Home" className="">
-            <Home />
-          </section>
-
-          <section id="About" className="">
-            <About />
-          </section>
-
-          <section id="Project" className="">
-            <Project />
-          </section>
-
-          <section id="Contact" className="">
-            <Contact />
-          </section>
-          <hr />
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ClickSpark>
   );
 }
