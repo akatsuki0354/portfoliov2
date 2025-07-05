@@ -1,3 +1,4 @@
+'use client'
 import React, { useRef, useEffect, useState } from 'react'
 import { buttonVariants } from "@/components/ui/button";
 import { Button } from "@/components/ui/button";
@@ -187,11 +188,11 @@ export default function Navbar() {
                                             >
                                                 <li
                                                     key={index}
-                                                    className={`py-[0.6em] px-[1em] rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-teal-700 hover:bg-white/10 hover:scale-105 ${activeIndex === index ? "active" : ""
+                                                    className={` p-2 rounded-full dark:hover:bg-stone-800/50 hover:bg-teal-700/20 relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-teal-700  hover:scale-105 ${activeIndex === index ? "active border-2 dark:border-teal-300 border-teal-600 shadow-[0_0_10px_rgba(20,184,166,0.5)] dark:shadow-[0_0_10px_rgba(94,234,212,0.6)] ring-2 dark:ring-teal-200/40 ring-teal-400/40" : ""
                                                         }`}
                                                     onClick={(e) => handleClick(e, index)}
                                                 >
-                                                    <item.icon className="size-6 dark:text-white dark:hover:text-white hover:text-teal-500 transition-colors" />
+                                                    <item.icon className={`size-5 transition-all duration-300 ease-in-out hover:scale-110 hover:drop-shadow-lg ${activeIndex === index ? 'text-white' : 'text-teal-600 hover:text-teal-700 dark:text-white dark:hover:text-white'}`} />
 
                                                 </li>
                                             </Link>

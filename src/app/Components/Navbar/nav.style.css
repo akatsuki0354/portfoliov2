@@ -12,7 +12,7 @@
 }
 
 .effect.text {
-    color: #115e59;
+    color: white;
     transition: color 0.3s ease;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .effect.text.active {
-    color: #14b8a6;
+    color: white;
 }
 
 .dark .effect.text.active {
@@ -45,7 +45,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: #14b8a6;
+    background: ligh;
     transform: scale(0);
     opacity: 0;
     z-index: -1;
@@ -53,12 +53,10 @@
 }
 
 .dark .effect.filter::after {
-    background: #5eead4;
+    background: teal;
 }
 
-.effect.active::after {
-    animation: pill 0.3s ease both;
-}
+
 
 @keyframes pill {
     to {
@@ -174,5 +172,5 @@ li::after {
 }
 
 .dark li::after {
-    background: #5eead4;
+    background: teal;
 }

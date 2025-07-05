@@ -10,7 +10,7 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
 import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion, SiSupabase, SiAndroidstudio } from "react-icons/si";
-
+import FallingText from '@/components/falling-text';
 const CarouselExample = () => {
     return (
         <div className="pt-24 m:mt-0 text-center text-xl">
@@ -52,6 +52,8 @@ const CarouselExample = () => {
 
             </div>
 
+
+
             {/* About Me Section */}
             <div className="flex justify-center mt-12">
                 <div className="max-w-7xl">
@@ -82,7 +84,7 @@ const CarouselExample = () => {
                             text="My Code Philosophy"
                         />
                     </div>
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-8 border border-blue-200/50 dark:border-blue-800/50">
+                    <div className="bg-gradient-to-r from-teal-200/10 to-indigo-50/10 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-8 border border-blue-200/50 dark:border-blue-800/50">
                         <p className="text-muted-foreground text-lg leading-relaxed">
                             <TextAnimate animation="blurIn" duration={1.2} as="h1">
                                 To keep my code clean, I try to name variables and functions in a way that clearly shows what they&apos;re for.
@@ -109,84 +111,80 @@ const CarouselExample = () => {
                             text="Technologies I Work With"
                         />
                     </div>
-                    <div className="flex justify-center flex-wrap gap-3">
-                        <span className="bg-[#1572B6] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiCss3 className="mr-2" /> CSS3
-                        </span>
-                        {/* <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiMarkdown className="mr-2" /> Markdown
-                        </span> */}
-                        <span className="bg-[#007ACC] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiTypescript className="mr-2" /> TypeScript
-                        </span>
-                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiVercel className="mr-2" /> Vercel
-                        </span>
-                        <span className="bg-[#0170FE] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiAntdesign className="mr-2" /> Ant Design
-                        </span>
-                        <span className="bg-[#8511FA] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiBootstrap className="mr-2" /> Bootstrap
-                        </span>
-                        <span className="bg-[#4ED1C5] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiChakraui className="mr-2" /> Chakra
-                        </span>
-                        <span className="bg-[#6DA55F] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiNodedotjs className="mr-2" /> Node.js
-                        </span>
-                        <span className="bg-[#2C8EBB] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiYarn className="mr-2" /> Yarn
-                        </span>
-                        <span className="bg-[#F05033] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiGit className="mr-2" /> Git
-                        </span>
-                        <span className="bg-[#121011] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiGithub className="mr-2" /> GitHub
-                        </span>
-                        {/* <span className="bg-[#000000] text-[#FF7139] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiNotion className="mr-2" /> Portfolio
-                        </span> */}
-                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiUnity className="mr-2" /> Unity
-                        </span>
-
-                        <span className="bg-[#039BE5] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiFirebase className="mr-2" /> Firebase
-                        </span>
-                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiNextdotjs className="mr-2" /> Next.js
-                        </span>
-                        <span className="bg-[#323330] text-[#F7DF1E] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiJavascript className="mr-2" /> JavaScript
-                        </span>
-                        <span className="bg-[#E34F26] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiHtml5 className="mr-2" /> HTML5
-                        </span>
-                        <span className="bg-[#CF649A] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiSass className="mr-2" /> SASS
-                        </span>
-                        <span className="bg-[#3670A0] text-[#ffdd54] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiPython className="mr-2" /> Python
-                        </span>
-                        <span className="bg-[#20232A] text-[#61DAFB] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiReact className="mr-2" /> React
-                        </span>
-                        <span className="bg-[#38B2AC] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiTailwindcss className="mr-2" /> TailwindCSS
-                        </span>
-                        <span className="bg-[#F5792A] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiBlender className="mr-2" /> Blender
-                        </span>
-                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiNotion className="mr-2" /> Notion
-                        </span>
-                        <span className="bg-[#000000] text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiSupabase className="mr-2" /> Supabase
-                        </span>
-
-                        <span className="bg-green-600 text-white text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiAndroidstudio className="mr-2" /> Android Studio
-                        </span>
+                    <div className="h-96 relative overflow-hidden bg-gradient-to-r from-teal-200/10 to-indigo-50/10 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-8 border border-blue-200/50 dark:border-blue-800/50">
+                        <div className="w-full h-full relative">
+                            <div className="flex justify-center flex-wrap gap-3">
+                                <span className="bg-gradient-to-r from-[#1572B6] to-[#1a8cd8] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce">
+                                    <SiCss3 className="mr-2" /> CSS3
+                                </span>
+                                <span className="bg-gradient-to-r from-[#007ACC] to-[#0098ff] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.1s'}}>
+                                    <SiTypescript className="mr-2" /> TypeScript
+                                </span>
+                                <span className="bg-gradient-to-r from-[#000000] to-[#333333] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.2s'}}>
+                                    <SiVercel className="mr-2" /> Vercel
+                                </span>
+                                <span className="bg-gradient-to-r from-[#0170FE] to-[#1a8cff] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.3s'}}>
+                                    <SiAntdesign className="mr-2" /> Ant Design
+                                </span>
+                                <span className="bg-gradient-to-r from-[#8511FA] to-[#9d3cff] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.4s'}}>
+                                    <SiBootstrap className="mr-2" /> Bootstrap
+                                </span>
+                                <span className="bg-gradient-to-r from-[#4ED1C5] to-[#5ee7d9] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.5s'}}>
+                                    <SiChakraui className="mr-2" /> Chakra
+                                </span>
+                                <span className="bg-gradient-to-r from-[#6DA55F] to-[#7bb86b] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.6s'}}>
+                                    <SiNodedotjs className="mr-2" /> Node.js
+                                </span>
+                                <span className="bg-gradient-to-r from-[#2C8EBB] to-[#3ba0cc] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.7s'}}>
+                                    <SiYarn className="mr-2" /> Yarn
+                                </span>
+                                <span className="bg-gradient-to-r from-[#F05033] to-[#ff6b4a] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.8s'}}>
+                                    <SiGit className="mr-2" /> Git
+                                </span>
+                                <span className="bg-gradient-to-r from-[#121011] to-[#2a2a2a] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '0.9s'}}>
+                                    <SiGithub className="mr-2" /> GitHub
+                                </span>
+                                <span className="bg-gradient-to-r from-[#000000] to-[#333333] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.0s'}}>
+                                    <SiUnity className="mr-2" /> Unity
+                                </span>
+                                <span className="bg-gradient-to-r from-[#039BE5] to-[#1aadff] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.1s'}}>
+                                    <SiFirebase className="mr-2" /> Firebase
+                                </span>
+                                <span className="bg-gradient-to-r from-[#000000] to-[#333333] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.2s'}}>
+                                    <SiNextdotjs className="mr-2" /> Next.js
+                                </span>
+                                <span className="bg-gradient-to-r from-[#323330] to-[#4a4a47] text-[#F7DF1E] text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.3s'}}>
+                                    <SiJavascript className="mr-2" /> JavaScript
+                                </span>
+                                <span className="bg-gradient-to-r from-[#E34F26] to-[#ff6b4a] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.4s'}}>
+                                    <SiHtml5 className="mr-2" /> HTML5
+                                </span>
+                                <span className="bg-gradient-to-r from-[#CF649A] to-[#e67aad] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.5s'}}>
+                                    <SiSass className="mr-2" /> SASS
+                                </span>
+                                <span className="bg-gradient-to-r from-[#3670A0] to-[#4a8bc0] text-[#ffdd54] text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.6s'}}>
+                                    <SiPython className="mr-2" /> Python
+                                </span>
+                                <span className="bg-gradient-to-r from-[#20232A] to-[#3a3d44] text-[#61DAFB] text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.7s'}}>
+                                    <SiReact className="mr-2" /> React
+                                </span>
+                                <span className="bg-gradient-to-r from-[#38B2AC] to-[#4fc3bd] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.8s'}}>
+                                    <SiTailwindcss className="mr-2" /> TailwindCSS
+                                </span>
+                                <span className="bg-gradient-to-r from-[#F5792A] to-[#ff8f4a] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '1.9s'}}>
+                                    <SiBlender className="mr-2" /> Blender
+                                </span>
+                                <span className="bg-gradient-to-r from-[#000000] to-[#333333] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '2.0s'}}>
+                                    <SiNotion className="mr-2" /> Notion
+                                </span>
+                                <span className="bg-gradient-to-r from-[#000000] to-[#333333] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '2.1s'}}>
+                                    <SiSupabase className="mr-2" /> Supabase
+                                </span>
+                                <span className="bg-gradient-to-r from-green-600 to-green-500 text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce" style={{animationDelay: '2.2s'}}>
+                                    <SiAndroidstudio className="mr-2" /> Android Studio
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
