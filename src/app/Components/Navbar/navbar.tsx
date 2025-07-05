@@ -14,9 +14,10 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 import { DATA } from '@/app/page-data'
 import Link from "next/link";
 import { Sun, MoonIcon } from "lucide-react";
+import '../Navbar/nav.style.css'
 
 export default function Navbar() {
-    const { mode, activeSection, toggleMode } = usePageState();
+    const { mode, toggleMode } = usePageState();
     const containerRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLUListElement>(null);
     const filterRef = useRef<HTMLSpanElement>(null);
@@ -41,7 +42,7 @@ export default function Navbar() {
         d: [number, number],
         r: number
     ) => {
-        let rotate = noise(r / 10);
+        const rotate = noise(r / 10);
         return {
             start: getXY(d[0], 15 - i, 15),
             end: getXY(d[1] + noise(7), 15 - i, 15),
@@ -257,157 +258,7 @@ export default function Navbar() {
             </div>
 
             {/* Gooey Effect Styles */}
-            <style>{`
-                :root {
-                    --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
-                }
-                .effect {
-                    position: absolute;
-                    opacity: 1;
-                    pointer-events: none;
-                    display: grid;
-                    place-items: center;
-                    z-index: 1;
-                }
-                .effect.text {
-                    color: #115e59;
-                    transition: color 0.3s ease;
-                }
-                .dark .effect.text {
-                    color: #14b8a6;
-                }
-                .effect.text.active {
-                    color: #14b8a6;
-                }
-                .dark .effect.text.active {
-                    color: #5eead4;
-                }
-                .effect.filter {
-                    filter: blur(7px) contrast(100) blur(0);
-                    mix-blend-mode: lighten;
-                }
-                .effect.filter::before {
-                    content: "";
-                    position: absolute;
-                    inset: -75px;
-                    z-index: -2;
-                    background: transparent;
-                }
-                .effect.filter::after {
-                    content: "";
-                    position: absolute;
-                    inset: 0;
-                    background: #14b8a6;
-                    transform: scale(0);
-                    opacity: 0;
-                    z-index: -1;
-                    border-radius: 50%;
-                }
-                .dark .effect.filter::after {
-                    background: #5eead4;
-                }
-                .effect.active::after {
-                    animation: pill 0.3s ease both;
-                }
-                @keyframes pill {
-                    to {
-                        transform: scale(1);
-                        opacity: 1;
-                    }
-                }
-                .particle,
-                .point {
-                    display: block;
-                    opacity: 0;
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 9999px;
-                    transform-origin: center;
-                }
-                .particle {
-                    --time: 5s;
-                    position: absolute;
-                    top: calc(50% - 8px);
-                    left: calc(50% - 8px);
-                    animation: particle calc(var(--time)) ease 1 -350ms;
-                }
-                .point {
-                    background: var(--color);
-                    opacity: 1;
-                    animation: point calc(var(--time)) ease 1 -350ms;
-                }
-                @keyframes particle {
-                    0% {
-                        transform: rotate(0deg) translate(calc(var(--start-x)), calc(var(--start-y)));
-                        opacity: 1;
-                        animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
-                    }
-                    70% {
-                        transform: rotate(calc(var(--rotate) * 0.5)) translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
-                        opacity: 1;
-                        animation-timing-function: ease;
-                    }
-                    85% {
-                        transform: rotate(calc(var(--rotate) * 0.66)) translate(calc(var(--end-x)), calc(var(--end-y)));
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: rotate(calc(var(--rotate) * 1.2)) translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
-                        opacity: 1;
-                    }
-                }
-                @keyframes point {
-                    0% {
-                        transform: scale(0);
-                        opacity: 0;
-                        animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
-                    }
-                    25% {
-                        transform: scale(calc(var(--scale) * 0.25));
-                    }
-                    38% {
-                        opacity: 1;
-                    }
-                    65% {
-                        transform: scale(var(--scale));
-                        opacity: 1;
-                        animation-timing-function: ease;
-                    }
-                    85% {
-                        transform: scale(var(--scale));
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: scale(0);
-                        opacity: 0;
-                    }
-                }
-                li.active {
-                    color: white;
-                    text-shadow: none;
-                }
-                .dark li.active {
-                    color: white;
-                }
-                li.active::after {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-                li::after {
-                    content: "";
-                    position: absolute;
-                    inset: 0;
-                    border-radius: 50%;
-                    background: #14b8a6;
-                    opacity: 0;
-                    transform: scale(0);
-                    transition: all 0.3s ease;
-                    z-index: -1;
-                }
-                .dark li::after {
-                    background: #5eead4;
-                }
-            `}</style>
+          
         </div>
     )
 }
