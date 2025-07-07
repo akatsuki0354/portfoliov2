@@ -9,6 +9,7 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
+import FallingText from "@/components/falling-text";
 import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion, SiSupabase, SiAndroidstudio } from "react-icons/si";
 const CarouselExample = () => {
     return (
@@ -110,7 +111,7 @@ const CarouselExample = () => {
                             text="Technologies I Work With"
                         />
                     </div>
-                    <div className="h-96 relative overflow-hidden bg-gradient-to-r from-teal-200/10 to-indigo-50/10 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-8 border border-blue-200/50 dark:border-blue-800/50">
+                    <div className=" bg-gradient-to-r from-teal-200/10 to-indigo-50/10 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-8 border border-blue-200/50 dark:border-blue-800/50">
                         <div className="w-full h-full relative">
                             <div className="flex justify-center flex-wrap gap-3">
                                 <span className="bg-gradient-to-r from-[#1572B6] to-[#1a8cd8] text-white text-sm px-4 py-2 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center hover:scale-105 animate-bounce">
