@@ -47,7 +47,7 @@ const Cursor: React.FC = () => {
                 top: cursorY,
                 width: '20px',
                 height: '20px',
-                backgroundColor: attachToParent ? 'red' : 'transparent',
+                backgroundColor: attachToParent ? '#3b82f6' : 'transparent',
                 borderRadius: '50%',
                 pointerEvents: 'none',
                 zIndex: 9999

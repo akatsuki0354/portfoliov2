@@ -34,7 +34,7 @@ export const MouseIcon = (props: SVGProps<SVGSVGElement>) => {
     >
       <g clipPath='url(#a)'>
         <path
-          fill={'#22c55e'}
+          fill={'#363434'}
           fillRule='evenodd'
           stroke={'#fff'}
           strokeLinecap='square'
@@ -45,7 +45,7 @@ export const MouseIcon = (props: SVGProps<SVGSVGElement>) => {
       </g>
       <defs>
         <clipPath id='a'>
-          <path fill={'#22c55e'} d='M0 0h26v31H0z' />
+          <path fill={'#363434'} d='M0 0h26v31H0z' />
         </clipPath>
       </defs>
     </svg>

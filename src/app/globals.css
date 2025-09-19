@@ -1195,7 +1195,7 @@ html, body{
   position: fixed;
   width: 20px;
   height: 20px;
-  background: radial-gradient(circle, var(--primary), transparent);
+  background: radial-gradient(circle, #363434, transparent);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
