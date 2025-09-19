@@ -25,7 +25,9 @@ export default function Page() {
       {isLoading && (
         <Loading />
       )}
-    
+
+
+
       <Spotlight
         className='bg-primary/30 dark:bg-primary/20 blur-3xl'
         size={64}
