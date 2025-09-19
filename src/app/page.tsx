@@ -27,7 +27,7 @@ export default function Page() {
       )}
     
       <Spotlight
-        className='bg-teal-500/50 dark:bg-gray-500/50 blur-3xl'
+        className='bg-primary/30 dark:bg-primary/20 blur-3xl'
         size={64}
         springOptions={{
           bounce: 0.3,

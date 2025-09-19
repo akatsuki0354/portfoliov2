@@ -25,14 +25,14 @@ function Projectlayouts(props: ProjectLayoutsProps) {
         >
             <MorphingDialogTrigger
                 style={{
-                    borderRadius: '12px',
+                    borderRadius: '16px',
                 }}
-                className='flex max-w-[470px]  flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
+                className='flex max-w-[470px] flex-col overflow-hidden section-bg-enhanced modern-card'
             >
                 <MorphingDialogImage
                     src={props.photoURl}
                     alt={props.photoAlt}
-                    className='h-80 w-full object-cover'
+                    className='w-full object-cover aspect-video rounded-lg'
                 />
                 <div className='flex grow flex-row items-end justify-between px-3 py-2'>
                     <div>
@@ -42,10 +42,10 @@ function Projectlayouts(props: ProjectLayoutsProps) {
 
                     </div>
                     <div className='flex gap-2'>
-                        <button className='hover:bg-slate-500/10 p-1 cursor-pointer border-1 border-slate-500/20  rounded-full'>
+                        <button className='hover:bg-slate-500/10 p-1 cursor-pointer border-1 border-slate-500/20  rounded-full' aria-label="View project details">
                             <ImageUpscale size={20} />
                         </button>
-                        <a href={props.github} className='hover:bg-slate-500/10 p-1 border-1 border-slate-500/20  rounded-full'>
+                        <a href={props.github} className='hover:bg-slate-500/10 p-1 border-1 border-slate-500/20  rounded-full' aria-label="View project on GitHub">
                             <GithubIcon size={20} />
                         </a>
                     </div>
