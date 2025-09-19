@@ -21,7 +21,8 @@ function Projectlayouts(props: ProjectLayoutsProps) {
                 type: 'spring',
                 bounce: 0.05,
                 duration: 0.25,
-            }}>
+            }}
+        >
             <MorphingDialogTrigger
                 style={{
                     borderRadius: '12px',
