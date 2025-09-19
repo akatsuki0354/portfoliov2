@@ -84,7 +84,7 @@ const CarouselExample = () => {
                             text="My Code Philosophy"
                         />
                     </div>
-                    <div className=" dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-8 ">
+                    <div className=" dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl ">
                         <p className="text-muted-foreground text-lg leading-relaxed">
                             <TextAnimate animation="blurIn" duration={1.2} as="h1">
                                 To keep my code clean, I try to name variables and functions in a way that clearly shows what they&apos;re for.

@@ -22,8 +22,8 @@ function Home() {
             <div className="container home">
                 <div className="flex justify-between items-center gap-5   profile_and_text" >
                     <div className="text_profile md:basis-[63%]">
-                        <h1 className="text-[clamp(2.90rem,5vw+1rem,6rem)] font-bold gradient-text kinetic-text">
-                            <span className="text-yellow-500">Hello!</span> I&apos;m Franco
+                        <h1 className="text-[clamp(2.90rem,5vw+1rem,6rem)] font-bold text-accent-foreground">
+                            <span className="">Hello!</span> I&apos;m Franco
                         </h1>
                         <hr className="hidden md:block "/>
                         <h1 className=" md:mt-3 text-[clamp(2rem,5vw+1rem,3rem)]">
@@ -48,12 +48,13 @@ function Home() {
                     </div>
                     <div className="img mt-15 lg:mt-0">
                         <SpringElement>
-                            <Tilt rotationFactor={5} isRevese>
+                            <Tilt rotationFactor={3} isRevese>
                                 <Avatar className="size-60 sm:size-70 lg:size-90 AvatarImage">
                                     <AvatarImage
                                         draggable={false}
                                         src={Profile.src}
                                         className="object-cover"
+                                        alt="Franco's Profile Picture"
                                     />
                                 </Avatar>
                             </Tilt>
