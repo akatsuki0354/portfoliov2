@@ -12,7 +12,6 @@ import { Cursor } from "../../components/motion-primitives/cursor";
 import Loading from "@/components/loading";
 import { usePageState } from "@/hooks/usePageState";
 import Navbar from "./Components/Navbar/navbar";
-import BackgroundAnimation from "./background-animation";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
