@@ -12,6 +12,7 @@ import { Cursor } from "../../components/motion-primitives/cursor";
 import Loading from "@/components/loading";
 import { usePageState } from "@/hooks/usePageState";
 import Navbar from "./Components/Navbar/navbar";
+import TimelinePage from "./Components/TimeLine/page";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -66,17 +67,20 @@ export default function Page() {
             <Home />
           </section>
 
-          <section id="About" className="">
+          <section id="About" className="mt-24">
             <About />
           </section>
 
-          <section id="Project" className="">
+          <section id="Project" className="mt-24">
             <Project />
           </section>
-
-          <section id="Contact" className="">
+          <section id="Timeline" className="mt-24 min-h-screen py-20">
+            <TimelinePage />
+          </section>
+          <section id="Contact" className="mt-24">
             <Contact />
           </section>
+
           <hr />
         </div>
       </div>

@@ -78,34 +78,37 @@ export const usePageState = () => {
         return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
 
-    // Intersection observer for active section
+    // Scroll-based active section detection
     useEffect(() => {
-        const sections = ['Home', 'About', 'Project', 'Contact'];
-        const observers: IntersectionObserver[] = [];
+        const handleScroll = () => {
+            const sections = ['Home', 'About', 'Project', 'Timeline', 'Contact'];
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-        sections.forEach((sectionId) => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                const observer = new IntersectionObserver(
-                    ([entry]) => {
-                        if (entry.isIntersecting) {
-                            setActiveSection(sectionId);
-                        }
-                    },
-                    {
-                        threshold: 0.2,
-                        rootMargin: '-10% 0px -10% 0px'
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = document.getElementById(sections[i]);
+                if (section) {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                        setActiveSection(sections[i]);
+                        break;
                     }
-                );
-                observer.observe(section);
-                observers.push(observer);
+                }
             }
-        });
+        };
+
+        // Add a small delay to ensure DOM is ready
+        const timer = setTimeout(() => {
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+        }, 100);
 
         return () => {
-            observers.forEach(observer => observer.disconnect());
+            clearTimeout(timer);
+            window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [isLoaded]);
 
     const toggleMode = () => {
         setMode(mode === 'light' ? 'dark' : 'light');

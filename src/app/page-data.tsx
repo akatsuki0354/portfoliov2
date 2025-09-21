@@ -1,10 +1,11 @@
-import { HomeIcon, Linkedin, Rocket, Contact2, User, Github } from "lucide-react";
+import { HomeIcon, Linkedin, Rocket, Contact2, User, Github, Clock } from "lucide-react";
 import { SVGProps } from 'react';
 export const DATA = {
   navbar: [
     { href: "#Home", icon: HomeIcon, label: "Home" },
     { href: "#About", icon: User, label: "About" },
     { href: "#Project", icon: Rocket, label: "Project" },
+    { href: "#Timeline", icon: Clock, label: "Timeline" },
     { href: "#Contact", icon: Contact2, label: "Contact" },
   ],
   contact: {
