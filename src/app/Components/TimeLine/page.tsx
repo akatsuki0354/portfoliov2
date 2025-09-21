@@ -12,8 +12,9 @@ export default function TimelinePage() {
             content: (
                 <div>
                     <p className=" mb-2 text-muted-foreground">
-                        I am currently working and collaborating on projects in <a href="https://snaptrail.app/" className="underline-offset-2 underline">SnapTrail</a> my
-                         Role is Full Stack App Developer Using React Native and Firebase.
+
+                        I am currently working and collaborating on projects at <a href="https://snaptrail.app/" className="underline-offset-2 underline">SnapTrail</a> as a Full Stack App Developer, using React Native and Firebase.
+
                     </p>
                 </div>
             ),
