@@ -45,7 +45,7 @@ export function Cursor({
       cursorX.set(window.innerWidth / 2);
       cursorY.set(window.innerHeight / 2);
     }
-  }, []);
+  }, [cursorX, cursorY]);
 
   useEffect(() => {
     if (!attachToParent) {
@@ -75,7 +75,7 @@ export function Cursor({
     return () => {
       document.removeEventListener('mousemove', updatePosition);
     };
-  }, [cursorX, cursorY, onPositionChange]);
+  }, [cursorX, cursorY, onPositionChange, attachToParent]);
 
   const cursorXSpring = useSpring(cursorX, springConfig || { duration: 0 });
   const cursorYSpring = useSpring(cursorY, springConfig || { duration: 0 });
@@ -85,35 +85,28 @@ export function Cursor({
       setIsVisible(visible);
     };
 
-    if (attachToParent && cursorRef.current) {
-      const parent = cursorRef.current.parentElement;
+    const currentCursorRef = cursorRef.current;
+    if (attachToParent && currentCursorRef) {
+      const parent = currentCursorRef.parentElement;
       if (parent) {
-        parent.addEventListener('mouseenter', () => {
+        const mouseEnterHandler = () => {
           parent.style.cursor = 'none';
           handleVisibilityChange(true);
-        });
-        parent.addEventListener('mouseleave', () => {
+        };
+        const mouseLeaveHandler = () => {
           parent.style.cursor = 'auto';
           handleVisibilityChange(false);
-        });
+        };
+        
+        parent.addEventListener('mouseenter', mouseEnterHandler);
+        parent.addEventListener('mouseleave', mouseLeaveHandler);
+
+        return () => {
+          parent.removeEventListener('mouseenter', mouseEnterHandler);
+          parent.removeEventListener('mouseleave', mouseLeaveHandler);
+        };
       }
     }
-
-    return () => {
-      if (attachToParent && cursorRef.current) {
-        const parent = cursorRef.current.parentElement;
-        if (parent) {
-          parent.removeEventListener('mouseenter', () => {
-            parent.style.cursor = 'none';
-            handleVisibilityChange(true);
-          });
-          parent.removeEventListener('mouseleave', () => {
-            parent.style.cursor = 'auto';
-            handleVisibilityChange(false);
-          });
-        }
-      }
-    };
   }, [attachToParent]);
 
   // Hide cursor when over pointer elements

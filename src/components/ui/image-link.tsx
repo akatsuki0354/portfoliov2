@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface ImageLinkProps {
-  src: any | any[];
+  src: string | string[] | StaticImageData | StaticImageData[];
   alt: string | string[];
   className?: string;
   linkText?: string;

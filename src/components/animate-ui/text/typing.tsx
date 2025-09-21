@@ -89,7 +89,7 @@ function TypingText({
       }, delay);
       return () => clearTimeout(timeoutId);
     }
-  }, [isInView, delay, ...(animateOnChange ? [text] : [])]);
+  }, [isInView, delay, animateOnChange, text]);
 
   React.useEffect(() => {
     if (!started) return;
