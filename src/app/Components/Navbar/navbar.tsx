@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { usePageState } from "@/hooks/usePageState";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
@@ -74,14 +74,14 @@ export default function Navbar() {
                                 <TooltipTrigger asChild>
                                     <span className='mode'>
                                         {mode === 'light' ? (
-                                            <Button variant={'ghost'} onClick={toggleMode}><MoonIcon /></Button>
+                                            <Button variant={'ghost'} className='rounded-full size-10' onClick={toggleMode}><MoonIcon /></Button>
                                         ) : (
-                                            <Button variant={'ghost'} onClick={toggleMode}><Sun /></Button>
+                                            <Button variant={'ghost'} className='rounded-full size-10' onClick={toggleMode}><Sun /></Button>
                                         )}
                                     </span>
                                 </TooltipTrigger>
                                 <TooltipContent>
-                                    <p>Theme</p>
+                                    {mode === 'light' ? 'Dark Mode' : 'Light Mode'}
                                 </TooltipContent>
                             </Tooltip>
                         </DockIcon>

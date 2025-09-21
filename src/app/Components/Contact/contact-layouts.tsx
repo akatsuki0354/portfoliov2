@@ -164,7 +164,6 @@ export function ContactLayouts({
                                                 <div className="text-zinc-300 text-xs font-mono">[INFO] Listening on port 443 (HTTPS)</div>
                                                 <div className="text-amber-400 text-xs font-mono animate-pulse">[READY] Awaiting secure connection...</div>
                                             </div>
-                                            
                                             {/* Status bar */}
                                             <div className="flex items-center justify-between border-t border-zinc-700/50 pt-2">
                                                 <div className="flex items-center gap-2">

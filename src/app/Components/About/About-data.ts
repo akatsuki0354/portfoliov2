@@ -1,6 +1,7 @@
 import Photo2 from '../../assets/img/image-2.jpg'
 import Photo3 from '../../assets/img/image-3.jpg'
 import Photo4 from '../../assets/img/image-4.jpg'
+import Photo5 from '../../assets/img/image-5.jpg'
 export const photoData = [{
     id: '2',
     photoURL: Photo2
@@ -10,4 +11,7 @@ export const photoData = [{
 }, {
     id: '4',
     photoURL: Photo4
+}, {
+    id: '5',
+    photoURL: Photo5
 }]

@@ -46,7 +46,7 @@ const CarouselExample = () => {
                                 index={idx}
                                 className="rounded-md bg-transparent cursor-pointer "
                             >
-                                <Image src={id.photoURL.src} alt="" width={id.photoURL.width} height={id.photoURL.height} className="object-contain" />
+                                <Image src={id.photoURL.src} alt="" width={id.photoURL.width} height={id.photoURL.height} className="object-cover aspect-video " />
                             </SliderThumbItem>
                         ))}
                     </CarouselThumbsContainer>
