@@ -130,68 +130,81 @@ export function ContactLayouts({
                             </Button>
                         </div>
                     </form>
-                    <div className="relative hidden rounded-l-2xl bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800 md:block overflow-hidden">
-                        {/* Animated background pattern */}
-                        <div className="absolute inset-0 opacity-10 dark:opacity-20">
-                            <div className="absolute top-4 left-4 w-2 h-2 bg-blue-400 dark:bg-blue-300 rounded-full animate-pulse"></div>
-                            <div className="absolute top-12 right-8 w-1 h-1 bg-indigo-400 dark:bg-indigo-300 rounded-full animate-ping"></div>
-                            <div className="absolute bottom-8 left-12 w-1.5 h-1.5 bg-purple-400 dark:bg-purple-300 rounded-full animate-bounce"></div>
+                    <div className="relative hidden rounded-l-2xl bg-gradient-to-br from-zinc-900 via-zinc-800 to-black dark:from-black dark:via-zinc-900 dark:to-zinc-800 md:block overflow-hidden">
+                        {/* Masculine hex pattern */}
+                        <div className="absolute inset-0 opacity-5">
+                            <div className="absolute inset-0 bg-[linear-gradient(30deg,transparent_24%,rgba(255,255,255,0.1)_25%,rgba(255,255,255,0.1)_26%,transparent_27%,transparent_74%,rgba(255,255,255,0.1)_75%,rgba(255,255,255,0.1)_76%,transparent_77%),linear-gradient(-30deg,transparent_24%,rgba(255,255,255,0.1)_25%,rgba(255,255,255,0.1)_26%,transparent_27%,transparent_74%,rgba(255,255,255,0.1)_75%,rgba(255,255,255,0.1)_76%,transparent_77%)] bg-[length:40px_40px]"></div>
                         </div>
 
+                        {/* Subtle animated overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/3 via-red-500/3 to-amber-500/3 animate-pulse"></div>
+
                         <div className="absolute inset-0 flex items-center justify-center p-8">
-                            <div className="group relative w-36 h-28 cursor-pointer">
-                                {/* Main envelope with enhanced 3D effect */}
-                                <div className="relative w-full h-full bg-white dark:bg-slate-800 rounded-lg shadow-xl dark:shadow-2xl transform rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-500 ease-out border border-gray-200 dark:border-slate-600">
+                            <div className="group relative w-52 h-44 cursor-pointer">
+                                {/* Masculine terminal interface */}
+                                <div className="relative w-full h-full bg-gradient-to-br from-zinc-800/95 to-zinc-900/95 backdrop-blur-sm rounded-lg shadow-2xl transform group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-500 ease-out border border-zinc-700/60 group-hover:border-orange-500/60 group-hover:shadow-orange-500/25">
 
-                                    {/* Envelope flap with gradient */}
-                                    <div className="absolute top-0 left-0 w-full h-0 border-l-[72px] border-r-[72px] border-b-[36px] border-l-transparent border-r-transparent border-b-gradient-to-r from-gray-100 to-gray-200 dark:from-slate-700 dark:to-slate-600"></div>
+                                    {/* Terminal header with masculine styling */}
+                                    <div className="absolute top-0 left-0 w-full h-7 bg-gradient-to-r from-zinc-700 to-zinc-600 rounded-t-lg border-b border-zinc-600 flex items-center px-3">
+                                        <div className="flex gap-1.5">
+                                            <div className="w-2 h-2 bg-red-500 rounded-full shadow-sm"></div>
+                                            <div className="w-2 h-2 bg-yellow-500 rounded-full shadow-sm"></div>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full shadow-sm"></div>
+                                        </div>
+                                        <div className="ml-3 text-xs text-zinc-200 font-mono font-semibold">TERMINAL v2.1</div>
+                                        <div className="ml-auto text-xs text-zinc-400 font-mono">root@dev</div>
+                                    </div>
 
-                                    {/* Envelope body with subtle texture */}
-                                    <div className="absolute top-9 left-3 w-30 h-18 bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-700 border-2 border-gray-300 dark:border-slate-500 rounded-sm shadow-inner dark:shadow-inner"></div>
-
-                                    {/* Letter inside with animated content */}
-                                    <div className="absolute top-11 left-5 w-26 h-14 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-700 dark:to-slate-600 border border-blue-200 dark:border-slate-500 rounded-sm shadow-sm dark:shadow-md group-hover:shadow-md dark:group-hover:shadow-lg transition-shadow duration-300">
-                                        <div className="p-2">
-                                            <div className="w-full h-1 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5 animate-pulse"></div>
-                                            <div className="w-4/5 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5"></div>
-                                            <div className="w-3/5 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5"></div>
-                                            <div className="w-2/5 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-400 dark:to-indigo-400 rounded"></div>
+                                    {/* Terminal content area */}
+                                    <div className="absolute top-7 left-2 right-2 bottom-2 bg-gradient-to-br from-black/80 to-zinc-900/80 rounded-sm border border-zinc-600/40">
+                                        <div className="p-3 h-full flex flex-col justify-between">
+                                            <div className="space-y-1.5">
+                                                <div className="text-orange-400 text-sm font-mono font-medium">$ ./contact --init --secure</div>
+                                                <div className="text-green-400 text-xs font-mono">[OK] Authentication server started</div>
+                                                <div className="text-zinc-300 text-xs font-mono">[INFO] Listening on port 443 (HTTPS)</div>
+                                                <div className="text-amber-400 text-xs font-mono animate-pulse">[READY] Awaiting secure connection...</div>
+                                            </div>
+                                            
+                                            {/* Status bar */}
+                                            <div className="flex items-center justify-between border-t border-zinc-700/50 pt-2">
+                                                <div className="flex items-center gap-2">
+                                                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                                    <span className="text-xs text-zinc-300 font-mono font-medium">SECURE</span>
+                                                </div>
+                                                <div className="text-xs text-zinc-500 font-mono">22:47:33</div>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    {/* Interactive seal/stamp */}
-                                    <div className="absolute top-2 right-2 w-6 h-6 bg-gradient-to-br from-red-400 to-red-600 dark:from-red-500 dark:to-red-700 rounded-full shadow-md dark:shadow-lg group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                                        <div className="w-3 h-3 bg-white dark:bg-slate-200 rounded-full opacity-80"></div>
-                                    </div>
+                                    {/* Masculine accent elements */}
+                                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-br from-orange-500 to-red-500 rounded-sm opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 transform rotate-45"></div>
+                                    <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-gradient-to-br from-amber-500 to-orange-500 rounded-sm opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-300"></div>
 
-                                    {/* Decorative elements with hover effects */}
-                                    <div className="absolute -top-3 -right-3 w-5 h-5 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 rounded-full opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300 shadow-lg dark:shadow-xl"></div>
-                                    <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-green-400 to-green-500 dark:from-green-300 dark:to-green-400 rounded-full opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300 shadow-lg dark:shadow-xl"></div>
-
-                                    {/* Subtle shine effect */}
-                                    <div className="absolute top-1 left-1 w-8 h-8 bg-gradient-to-br from-white to-transparent dark:from-slate-200 dark:to-transparent rounded-full opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                                    {/* Masculine glow effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 </div>
 
-                                {/* Floating message indicator */}
-                                {/* <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-white dark:bg-slate-800 px-3 py-1 rounded-full shadow-lg dark:shadow-xl border border-gray-200 dark:border-slate-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-gray-600 dark:text-gray-300 font-medium">
-                                   Thanks for Visiting my portfolio
-                                </div> */}
+                                {/* Masculine tooltip */}
+                                <div className="absolute -top-14 left-1/2 transform -translate-x-1/2 bg-zinc-900/95 backdrop-blur-sm px-4 py-2 rounded-md border border-zinc-700/60 opacity-0 group-hover:opacity-100 transition-all duration-300 text-xs text-zinc-200 font-mono font-medium shadow-xl">
+                                    [SYSTEM] Secure connection ready
+                                </div>
                             </div>
                         </div>
 
-                        {/* Enhanced background decorative elements */}
-                        <div className="absolute top-6 right-6 w-20 h-20 border-2 border-dashed border-blue-300 dark:border-blue-400 rounded-full opacity-40 animate-spin-slow"></div>
-                        <div className="absolute bottom-6 left-6 w-16 h-16 border border-blue-300 dark:border-blue-400 rounded-lg opacity-40 transform rotate-45 animate-pulse"></div>
+                        {/* Masculine background elements */}
+                        <div className="absolute top-6 right-6 w-20 h-20 border border-orange-500/20 rounded-sm opacity-40 animate-pulse transform rotate-45"></div>
+                        <div className="absolute bottom-6 left-6 w-16 h-16 border border-amber-500/20 rounded-sm opacity-30 transform rotate-12 animate-pulse"></div>
 
-                        {/* Floating particles */}
-                        <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-blue-400 dark:bg-blue-300 rounded-full animate-ping"></div>
-                        <div className="absolute bottom-1/3 left-1/3 w-0.5 h-0.5 bg-indigo-400 dark:bg-indigo-300 rounded-full animate-ping delay-1000"></div>
+                        {/* Masculine particles */}
+                        <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-orange-500 rounded-full animate-ping"></div>
+                        <div className="absolute bottom-1/3 left-1/3 w-0.5 h-0.5 bg-red-500 rounded-full animate-ping delay-1000"></div>
+                        <div className="absolute top-1/2 left-1/4 w-0.5 h-0.5 bg-amber-500 rounded-full animate-ping delay-500"></div>
 
-                        {/* Contact info overlay */}
-                        <div className="absolute bottom-4 right-4 text-xs text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity duration-300">
-                            <div className="flex items-center gap-1">
-                                <div className="w-2 h-2 bg-green-400 dark:bg-green-300 rounded-full animate-pulse"></div>
-                                I will respond soon.
+                        {/* Masculine status indicator */}
+                        <div className="absolute bottom-4 right-4 text-xs text-zinc-500 opacity-70 hover:opacity-100 transition-opacity duration-300">
+                            <div className="flex items-center gap-2 font-mono font-semibold">
+                                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span className="text-zinc-300">ONLINE</span>
                             </div>
                         </div>
                     </div>
