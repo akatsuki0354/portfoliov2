@@ -12,9 +12,7 @@ export default function TimelinePage() {
             content: (
                 <div>
                     <p className=" mb-2 text-muted-foreground">
-
-                        I am currently working and collaborating on projects at <a href="https://snaptrail.app/" className="underline-offset-2 underline">SnapTrail</a> as a Full Stack App Developer, using React Native and Firebase.
-
+                        I am currently working and collaborating on projects at <a href="https://snaptrail.app/" className="underline-offset-2 underline">SnapTrail</a> as a <strong>Full Stack App Developer</strong>, using <strong>React Native</strong> and <strong>Firebase</strong>.
                     </p>
                 </div>
             ),
@@ -25,7 +23,7 @@ export default function TimelinePage() {
             content: (
                 <div>
                     <p className=" mb-2   text-muted-foreground">
-                        On April 3, I became the champion in a blitz programming competition. I competed against 2nd, 3rd, and 4th-year college students and managed to defeat them.
+                        On April 3, I became the <strong>champion in a blitz  programming competition </strong>. I competed against 2nd, 3rd, and 4th-year college students and managed to defeat them.
                     </p>
                     <ImageLink
                         src={image2}
