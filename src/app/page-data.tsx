@@ -1,4 +1,4 @@
-import { HomeIcon, Linkedin, Rocket, Contact2, User, Github, Clock } from "lucide-react";
+import { HomeIcon, Rocket, Contact2, User, Clock } from "lucide-react";
 import { SVGProps } from 'react';
 export const DATA = {
   navbar: [
@@ -8,20 +8,6 @@ export const DATA = {
     { href: "#Timeline", icon: Clock, label: "Timeline" },
     { href: "#Contact", icon: Contact2, label: "Contact" },
   ],
-  contact: {
-    social: {
-      GitHub: {
-        name: "GitHub",
-        url: "https://github.com/akatsuki0354/",
-        icon: Github,
-      },
-      LinkedIn: {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/franco-gregorio-1ba17a277/",
-        icon: Linkedin,
-      },
-    },
-  },
 };
 
 export const MouseIcon = (props: SVGProps<SVGSVGElement>) => {

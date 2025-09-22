@@ -5,7 +5,7 @@ import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
 import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
-import Footer from "./Components/Footer/Footer";
+import Footer from "@/components/spectrumui/footer";
 import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
