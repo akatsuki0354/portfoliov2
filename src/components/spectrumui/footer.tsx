@@ -6,19 +6,12 @@ export default function Footer() {
     <footer className=" py-24 px-4 md:px-6 z-50">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between">
-          <div className="mb-8 md:mb-0">
-            <Link href="/" className="flex items-center gap-2">
+          <div className="">
+            <Link href="/" className="flex items-center">
               <h2 className="text-lg font-bold">Portfolio</h2>
             </Link>
 
-            <h1 className="dark:text-gray-300 mt-4">
-              Build by{" "}
-              <span className="dark:text-[#039ee4]">
-                <Link href="#">@francogregorio</Link>
-              </span>
-            </h1>
-
-            <p className="text-sm dark:text-gray-400 mt-5">
+            <p className="text-sm dark:text-gray-400 mt-3">
               © {new Date().getFullYear()} Franco Gregorio. All rights reserved.
             </p>
           </div>
