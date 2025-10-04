@@ -1230,6 +1230,32 @@ html, body{
   background: var(--chart-2);
 }
 
+/* Modern Cyber Loading Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-15px) translateX(5px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes modernLoad {
+  0% {
+    width: 0%;
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    width: 100%;
+    background-position: 0% 50%;
+  }
+}
+
 /* Responsive Design Enhancements */
 @media (max-width: 768px) {
   .modern-card:hover {
