@@ -25,20 +25,26 @@ export default function Footer() {
             <div className="flex gap-10">
 
               <a
-                href="https://github.com/akatsuki0354/">
+                href="https://github.com/akatsuki0354/"
+                className="text-gray-500 hover:text-black"
+              >
                 <div className="flex gap-1">
                   <Github size={19} /> Github
                 </div>
               </a>
               <a
-                href="https://www.linkedin.com/in/franco-gregorio-1ba17a277/" >
+                href="https://www.linkedin.com/in/franco-gregorio-1ba17a277/"
+                className="text-gray-500 hover:text-black"
+              >
                 <div className="flex gap-1">
                   <Linkedin size={19} className="" /> LinkedIn
                 </div>
               </a>
               <a
-                href="https://www.facebook.com/franco.0354">
-                <div className="flex gap-1">
+                href="https://www.facebook.com/franco.0354"
+                className="text-gray-500 hover:text-black"
+              >
+                <div className="flex gap-1 ">
                   <Facebook size={19} /> FaceBook
                 </div>
               </a>
