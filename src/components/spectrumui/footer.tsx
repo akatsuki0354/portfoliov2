@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Linkedin, Github, Facebook } from "lucide-react";
 export default function Footer() {
   return (
-    <footer className=" py-24 px-4 md:px-6 relative z-50">
+    <div className=" py-24 px-4 md:px-6 relative">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="">
@@ -15,45 +15,37 @@ export default function Footer() {
               © {new Date().getFullYear()} Franco Gregorio. All rights reserved.
             </p>
           </div>
-          <div>
-            <div>
+
+
+          <div className="relative z-50">
+
+            <div className="">
               <h3 className="font-semibold mb-4">Socials</h3>
-              <ul className="gap-10 flex justify-between flex-wrap">
-                <li>
-                  <a
-                    href="https://github.com/akatsuki0354/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-black dark:text-gray-400 gap-2 dark:hover:text-white flex cursor-pointer"
-                  >
-                    <Github size={18} className="mt-1" /> Github
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/franco-gregorio-1ba17a277/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-black flex dark:text-gray-400 gap-2 dark:hover:text-white cursor-pointer"
-                  >
-                    <Linkedin size={19} className="" /> LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/franco.0354"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 flex gap-1 hover:text-black dark:text-gray-400 dark:hover:text-white cursor-pointer"
-                  >
-                    <Facebook size={19} /> FaceBook
-                  </a>
-                </li>
-              </ul>
+            </div>
+            <div className="flex gap-10">
+
+              <a
+                href="https://github.com/akatsuki0354/">
+                <div className="flex gap-1">
+                  <Github size={19} /> Github
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/franco-gregorio-1ba17a277/" >
+                <div className="flex gap-1">
+                  <Linkedin size={19} className="" /> LinkedIn
+                </div>
+              </a>
+              <a
+                href="https://www.facebook.com/franco.0354">
+                <div className="flex gap-1">
+                  <Facebook size={19} /> FaceBook
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }
